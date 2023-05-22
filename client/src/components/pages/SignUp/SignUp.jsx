@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import FormInput from '../FormInput';
+import FormInput from '../../FormInput/FormInput';
 
 const SignUp = () => {
     //sign up form takes first name,last name, email, password (two times to confirm), and user/writer(radio)
@@ -75,7 +75,6 @@ const SignUp = () => {
             }  
         }
        setPassword(passwordValue)
-
     }
 
     function confirmPasswordHandler (e) {
@@ -109,7 +108,6 @@ const SignUp = () => {
                         onChangeHandler={e => setLastName(e.target.value)}
                     />
                 </div>
-                {/* Email */}
                 <div>
                     <FormInput 
                         htmlFor='email' 
@@ -120,7 +118,6 @@ const SignUp = () => {
                         onChangeHandler={emailHandler}
                     />
                 </div>
-                {/* Password */}
                 <div>
                     <FormInput 
                         htmlFor='password' 
@@ -138,7 +135,6 @@ const SignUp = () => {
                         requiredBool={true}
                         onChangeHandler={confirmPasswordHandler}
                     />
-                    
                 </div>
                 {/* User/Seller */}
                 <div>
