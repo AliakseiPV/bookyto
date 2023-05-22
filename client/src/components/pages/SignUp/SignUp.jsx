@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import FormInput from "../../FormInput/FormInput";
+import {emailValidation, passwordValidation} from "../../../utils/validation";
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('')
@@ -20,70 +21,6 @@ const SignUp = () => {
     useEffect(() => {
         (!passwordError.length && !emailError.length && !isSamePassword) ? setButtonBool(false) : setButtonBool(true);
     }, [passwordError, emailError, isSamePassword])
-
-    function emailHandler (e) {
-        setEmailError([])
-        const emailValue = e.target.value
-        const emailErrors = [
-            {
-                filter: /^\s*\S+.*/,
-                error: "Email field is empty"
-            },
-            {
-                filter: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
-                error: "Email field is not correct"
-            }
-        ]
-        for (let element of emailErrors) {
-            if (!element.filter.test(String(emailValue))) {
-                setEmailError(emailError => [...emailError, element.error])
-            }
-        }
-        setEmail(emailValue)
-    }
-
-
-    function passwordHandler (e) {
-        setPasswordError([])
-        const passwordValue = e.target.value; 
-        const regexCheck = [
-            {
-                filter: /^\s*\S+.*/, 
-                error: "Password is empty"
-            },
-            {
-                filter: /^(?=[^a-z]*[a-z])/, 
-                error: "Password must include at least one lower case"
-            },
-            {
-                filter: /^(?=[^A-Z]*[A-Z])/, 
-                error: "Password must include at least one upper case"
-            },
-            {
-                filter: /^(?=\D*\d)/, 
-                error: "Password must include at least one number"
-            },
-            {
-                filter: /^(?=[^!#%]*[!#%])/, 
-                error: "Password must include at one special character (only !#% are allowed)"
-            },
-            {
-                filter: /^([A-Za-z0-9!#%])(?!.* )/, 
-                error: "Password has symbols which are not allowed"
-            },
-            {
-                filter: /.{8,32}/, 
-                error: "Password has to be between 8 to 32 characters long"
-            },
-        ]
-
-        for (let element of regexCheck) {
-            if (!element.filter.test(String(passwordValue))) {
-                setPasswordError(passwordError => [...passwordError, element.error])
-            }  
-        }
-       setPassword(passwordValue)
-    }
 
     function confirmPasswordHandler (e) {
         let confirmPassword = e.target.value
@@ -131,7 +68,7 @@ const SignUp = () => {
                         typeInput='email'
                         name='email'
                         requiredBool={true}
-                        onChangeHandler={emailHandler}
+                        onChangeHandler={(event) => emailValidation(event, setEmail, setEmailError)}
                     />
                 </div>
                 <div>
@@ -142,7 +79,7 @@ const SignUp = () => {
                         typeInput='text'
                         name='password'
                         requiredBool={true}
-                        onChangeHandler={passwordHandler}
+                        onChangeHandler={(event) => passwordValidation(event, setPassword, setPasswordError)}
                     />
                     <FormInput 
                         htmlFor='password_confirmation' 
