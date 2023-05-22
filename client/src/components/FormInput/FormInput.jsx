@@ -1,6 +1,17 @@
 import React from 'react';
 
-const FormInput = ({htmlFor, labelText, nameInput, typeInput, valueInput, requiredBool, placeholder, onChangeHandler}) => {
+const FormInput = ({
+                       htmlFor,
+                       labelText,
+                       nameInput,
+                       typeInput,
+                       valueInput,
+                       requiredBool,
+                       placeholder,
+                       onChangeHandler,
+                       onMouseLeave,
+                       onMouseEnter
+}) => {
     return (
         <>
             <label htmlFor={htmlFor}>
@@ -13,6 +24,8 @@ const FormInput = ({htmlFor, labelText, nameInput, typeInput, valueInput, requir
                 required={requiredBool}
                 placeholder={placeholder}
                 onChange={onChangeHandler}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
             />
         </>
     );

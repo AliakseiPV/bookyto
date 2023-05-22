@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import FormInput from "../../FormInput/FormInput";
-import FormButton from "../../FormButton/FormButton";
-import {emailValidation, passwordValidation} from "../../../utils/validation";
+import FormInput from '../FormInput/FormInput';
+import FormButton from '../FormButton/FormButton';
+import {emailValidation, passwordValidation} from '../../utils/validation';
+import FormError from "../FormError/FormError";
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('')
@@ -10,27 +11,38 @@ const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [repeatPassword, setRepeatPassword] = useState('')
-    const [emailError, setEmailError] = useState(["Email field is empty"])
-    const [passwordError, setPasswordError] = useState(["Password is empty"])
-    const [repeatPasswordError, setRepeatPasswordError] = useState("Password is empty")
+    const [emailError, setEmailError] = useState(['Email field is empty'])
+    const [passwordError, setPasswordError] = useState(['Password is empty'])
+    const [repeatPasswordError, setRepeatPasswordError] = useState(['Password is empty'])
     const [disableButton, setDisableButton] = useState(true)
+    const [emailFocus, setEmailFocus] = useState(false)
+    const [passwordFocus, setPasswordFocus] = useState(false)
+    const [repeatPasswordFocus, setRepeatPasswordFocus] = useState(false)
 
     function handleSubmit (e) {
         e.preventDefault();
     }
 
     useEffect(() => {
-        (!passwordError.length && !emailError.length && !repeatPasswordError) ? setDisableButton(false) : setDisableButton(true);
+        (!passwordError.length && !emailError.length && !repeatPasswordError)
+            ?
+            setDisableButton(false)
+            :
+            setDisableButton(true);
     }, [passwordError, emailError, repeatPasswordError])
 
     function confirmPasswordHandler (e) {
         let confirmPassword = e.target.value
+        setRepeatPasswordError([])
         setRepeatPassword(confirmPassword)
-        if(!(password === confirmPassword)) {
-            setRepeatPasswordError("Passwords are not the same")
-            return
+
+        if (!confirmPassword) {
+            setRepeatPasswordError(errors => [...errors, 'Password is empty'])
+            return;
         }
-        setRepeatPasswordError('')
+        if (!(password === confirmPassword)) {
+            setRepeatPasswordError(errors => [...errors, 'Passwords are not the same'])
+        }
     }
 
     return (
@@ -70,7 +82,10 @@ const SignUp = () => {
                         name='email'
                         requiredBool={true}
                         onChangeHandler={(event) => emailValidation(event, setEmail, setEmailError)}
+                        onMouseEnter={() => setEmailFocus(true)}
+                        onMouseLeave={() => setEmailFocus(false)}
                     />
+                    {(emailFocus && emailError.length) ? <FormError errors={emailError}/> : <></>}
                 </div>
                 <div>
                     <FormInput 
@@ -81,19 +96,27 @@ const SignUp = () => {
                         name='password'
                         requiredBool={true}
                         onChangeHandler={(event) => passwordValidation(event, setPassword, setPasswordError)}
+                        onMouseEnter={() => setPasswordFocus(true)}
+                        onMouseLeave={() => setPasswordFocus(false)}
                     />
-                    <FormInput 
-                        htmlFor='password_confirmation' 
-                        labelText='confirm password' 
+                    {(passwordFocus && passwordError.length) ? <FormError errors={passwordError}/> : <></>}
+                </div>
+                <div>
+                    <FormInput
+                        htmlFor='password_confirmation'
+                        labelText='confirm password'
                         valueInput={repeatPassword}
                         typeInput='text'
                         name='confirm'
                         requiredBool={true}
                         onChangeHandler={confirmPasswordHandler}
+                        onMouseEnter={() => setRepeatPasswordFocus(true)}
+                        onMouseLeave={() => setRepeatPasswordFocus(false)}
                     />
+                    {(repeatPasswordFocus && repeatPasswordError.length) ? <FormError errors={repeatPasswordError}/> : <></>}
                 </div>
                 <div>
-                    <label>Are you a:</label>
+                    <label>Who are you:</label>
                     <div>
                         <FormInput
                             htmlFor='default_radio'
@@ -121,7 +144,7 @@ const SignUp = () => {
                     />
                 </div>
                 <div>
-                    Already have an account? {" "}
+                    Already have an account?
                     <span>
                         <Link to="/login">Login</Link>
                     </span>
