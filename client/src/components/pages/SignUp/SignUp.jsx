@@ -1,35 +1,36 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import FormInput from "../../FormInput/FormInput";
+import FormButton from "../../FormButton/FormButton";
 import {emailValidation, passwordValidation} from "../../../utils/validation";
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
-    const [emailError, setEmailError] = useState(["Email field is empty"])
     const [password, setPassword] = useState('')
-    const [checkPassword, setCheckPassword] = useState('')
+    const [repeatPassword, setRepeatPassword] = useState('')
+    const [emailError, setEmailError] = useState(["Email field is empty"])
     const [passwordError, setPasswordError] = useState(["Password is empty"])
-    const [isSamePassword, setIsSamePassword] = useState("Password is empty")
-    const [buttonBool, setButtonBool] = useState(true)
+    const [repeatPasswordError, setRepeatPasswordError] = useState("Password is empty")
+    const [disableButton, setDisableButton] = useState(true)
 
     function handleSubmit (e) {
         e.preventDefault();
     }
 
     useEffect(() => {
-        (!passwordError.length && !emailError.length && !isSamePassword) ? setButtonBool(false) : setButtonBool(true);
-    }, [passwordError, emailError, isSamePassword])
+        (!passwordError.length && !emailError.length && !repeatPasswordError) ? setDisableButton(false) : setDisableButton(true);
+    }, [passwordError, emailError, repeatPasswordError])
 
     function confirmPasswordHandler (e) {
         let confirmPassword = e.target.value
-        setCheckPassword(confirmPassword)
+        setRepeatPassword(confirmPassword)
         if(!(password === confirmPassword)) {
-            setIsSamePassword("Passwords are not the same")
+            setRepeatPasswordError("Passwords are not the same")
             return
         }
-        setIsSamePassword('')
+        setRepeatPasswordError('')
     }
 
     return (
@@ -84,36 +85,40 @@ const SignUp = () => {
                     <FormInput 
                         htmlFor='password_confirmation' 
                         labelText='confirm password' 
-                        valueInput={checkPassword}
+                        valueInput={repeatPassword}
                         typeInput='text'
                         name='confirm'
                         requiredBool={true}
                         onChangeHandler={confirmPasswordHandler}
                     />
                 </div>
-                {/* User/Seller */}
                 <div>
                     <label>Are you a:</label>
                     <div>
-                        <input type='radio' value='buyer' name='user_role'></input>
-                        <label htmlFor="default_radio">
-                            Buyer
-                        </label>
+                        <FormInput
+                            htmlFor='default_radio'
+                            labelText='Buyer'
+                            valueInput='buyer'
+                            typeInput='radio'
+                            name='user_role'
+                        />
                     </div>
                     <div>
-                        <input type='radio' value='seller' name='user_role'></input>
-                        <label htmlFor="default_radio">
-                            Seller
-                        </label>
+                        <FormInput
+                            htmlFor='default_radio'
+                            labelText='Seller'
+                            valueInput='seller'
+                            typeInput='radio'
+                            name='user_role'
+                        />
                     </div>
                 </div>
                 <div>
-                    <button
-                        type='submit'
-                        disabled={buttonBool}
-                    >
-                        Sign Up
-                    </button>
+                    <FormButton
+                        buttonType='submit'
+                        isDisabled={disableButton}
+                        buttonText='Sign Up'
+                    />
                 </div>
                 <div>
                     Already have an account? {" "}
