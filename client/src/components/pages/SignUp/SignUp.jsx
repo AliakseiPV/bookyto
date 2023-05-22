@@ -6,11 +6,11 @@ const SignUp = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
-    const [emailError, setEmailError] = useState('')
+    const [emailError, setEmailError] = useState(["Email field is empty"])
     const [password, setPassword] = useState('')
     const [checkPassword, setCheckPassword] = useState('')
-    const [passwordError, setPasswordError] = useState([])
-    const [isSamePassword, setIsSamePassword] = useState('')
+    const [passwordError, setPasswordError] = useState(["Password is empty"])
+    const [isSamePassword, setIsSamePassword] = useState("Password is empty")
     const [buttonBool, setButtonBool] = useState(true)
 
     function handleSubmit (e) {
@@ -18,23 +18,28 @@ const SignUp = () => {
     }
 
     useEffect(() => {
-        (!passwordError.length && !emailError && !isSamePassword) ? setButtonBool(false) : setButtonBool(true);
+        (!passwordError.length && !emailError.length && !isSamePassword) ? setButtonBool(false) : setButtonBool(true);
     }, [passwordError, emailError, isSamePassword])
 
     function emailHandler (e) {
+        setEmailError([])
         const emailValue = e.target.value
+        const emailErrors = [
+            {
+                filter: /^\s*\S+.*/,
+                error: "Email field is empty"
+            },
+            {
+                filter: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+                error: "Email field is not correct"
+            }
+        ]
+        for (let element of emailErrors) {
+            if (!element.filter.test(String(emailValue))) {
+                setEmailError(emailError => [...emailError, element.error])
+            }
+        }
         setEmail(emailValue)
-        const filter = /^\s*[\w\-+_]+(\.[\w\-+_]+)*@[\w\-+_]+\.[\w\-+_]+(\.[\w\-+_]+)*\s*$/
-
-        if (!emailValue) {
-            setEmailError("Email field can't be empty")
-            return
-        }
-        if (!filter.test(String(emailValue).toLowerCase())) {
-            setEmailError('Email field is not correct')
-            return
-        }
-        setEmailError('')
     }
 
 
