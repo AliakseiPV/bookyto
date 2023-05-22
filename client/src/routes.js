@@ -1,7 +1,7 @@
-import BookPage from './components/pages/BookPage'
-import Login from './components/pages/Login'
-import SignUp from './components/pages/SignUp'
-import StorePage from './components/pages/StorePage'
+import BookPage from '../src/components/pages/BookPage/BookPage'
+import Login from '../src/components/pages/Login/Login'
+import SignUp from '../src/components/pages/SignUp/SignUp'
+import StorePage from '../src/components/pages/StorePage/StorePage'
 import {REGISTRATION_ROUTE, LOGIN_ROUTE, STORE_ROUTE, BOOK_ROUTE, SETTINGS_ROUTE, FAVOURITES_ROUTE, BASKET_ROUTE, SELLER_ROUTE, DASHBOARD_ROUTE, PRODUCT_ROUTE} from './utils/consts'
 
 export const BuyerAuthRoutes = [

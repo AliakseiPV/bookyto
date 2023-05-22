@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import FormInput from '../../FormInput/FormInput';
+import FormInput from "../../FormInput/FormInput";
 
 const SignUp = () => {
-    //sign up form takes first name,last name, email, password (two times to confirm), and user/writer(radio)
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -11,14 +10,20 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [checkPassword, setCheckPassword] = useState('')
     const [passwordError, setPasswordError] = useState([])
+    const [isSamePassword, setIsSamePassword] = useState('')
+    const [buttonBool, setButtonBool] = useState(true)
 
     function handleSubmit (e) {
-        e.preventDefault(); 
-        console.log(email)
-
+        e.preventDefault();
     }
+
+    useEffect(() => {
+        (!passwordError.length && !emailError && !isSamePassword) ? setButtonBool(false) : setButtonBool(true);
+    }, [passwordError, emailError, isSamePassword])
+
     function emailHandler (e) {
         const emailValue = e.target.value
+        setEmail(emailValue)
         const filter = /^\s*[\w\-+_]+(\.[\w\-+_]+)*@[\w\-+_]+\.[\w\-+_]+(\.[\w\-+_]+)*\s*$/
 
         if (!emailValue) {
@@ -30,10 +35,8 @@ const SignUp = () => {
             return
         }
         setEmailError('')
-        setEmail(emailValue)
     }
 
-    useEffect(() => { console.log(passwordError)})
 
     function passwordHandler (e) {
         setPasswordError([])
@@ -78,10 +81,15 @@ const SignUp = () => {
     }
 
     function confirmPasswordHandler (e) {
-
+        let confirmPassword = e.target.value
+        setCheckPassword(confirmPassword)
+        if(!(password === confirmPassword)) {
+            setIsSamePassword("Passwords are not the same")
+            return
+        }
+        setIsSamePassword('')
     }
 
-   
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -91,6 +99,7 @@ const SignUp = () => {
                         htmlFor='firstName' 
                         labelText='First Name' 
                         valueInput={firstName}
+                        typeInput='text'
                         name='firstName'
                         requiredBool={true}
                         placeholder='Enter your first name...'
@@ -102,6 +111,7 @@ const SignUp = () => {
                         htmlFor='lastName' 
                         labelText='Last Name' 
                         valueInput={lastName}
+                        typeInput='text'
                         name='lastName'
                         requiredBool={true}
                         placeholder='Enter your surname...'
@@ -113,6 +123,7 @@ const SignUp = () => {
                         htmlFor='email' 
                         labelText='Email' 
                         valueInput={email}
+                        typeInput='email'
                         name='email'
                         requiredBool={true}
                         onChangeHandler={emailHandler}
@@ -123,6 +134,7 @@ const SignUp = () => {
                         htmlFor='password' 
                         labelText='password' 
                         valueInput={password}
+                        typeInput='text'
                         name='password'
                         requiredBool={true}
                         onChangeHandler={passwordHandler}
@@ -131,6 +143,7 @@ const SignUp = () => {
                         htmlFor='password_confirmation' 
                         labelText='confirm password' 
                         valueInput={checkPassword}
+                        typeInput='text'
                         name='confirm'
                         requiredBool={true}
                         onChangeHandler={confirmPasswordHandler}
@@ -153,7 +166,10 @@ const SignUp = () => {
                     </div>
                 </div>
                 <div>
-                    <button type='submit'>
+                    <button
+                        type='submit'
+                        disabled={buttonBool}
+                    >
                         Sign Up
                     </button>
                 </div>
