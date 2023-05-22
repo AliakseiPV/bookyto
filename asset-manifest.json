@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/bookyto/static/js/main.0a24c1c9.js",
-    "index.html": "/bookyto/index.html",
-    "main.0a24c1c9.js.map": "/bookyto/static/js/main.0a24c1c9.js.map"
+    "main.js": "/bookyto/registration/static/js/main.d8122051.js",
+    "index.html": "/bookyto/registration/index.html",
+    "main.d8122051.js.map": "/bookyto/registration/static/js/main.d8122051.js.map"
   },
   "entrypoints": [
-    "static/js/main.0a24c1c9.js"
+    "static/js/main.d8122051.js"
   ]
 }
