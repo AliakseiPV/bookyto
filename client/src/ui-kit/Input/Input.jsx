@@ -8,7 +8,7 @@ const FormInput = ({
                        valueInput,
                        requiredBool,
                        placeholder,
-                       onChangeHandler,
+                       onChange,
                        onBlurInput,
                        onFocusInput
 }) => {
@@ -23,7 +23,7 @@ const FormInput = ({
                 type={typeInput} 
                 required={requiredBool}
                 placeholder={placeholder}
-                onChange={onChangeHandler}
+                onChange={onChange}
                 onFocus={onFocusInput}
                 onBlur={onBlurInput}
             />
