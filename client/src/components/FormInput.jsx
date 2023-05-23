@@ -9,8 +9,8 @@ const FormInput = ({
                        requiredBool,
                        placeholder,
                        onChangeHandler,
-                       onMouseLeave,
-                       onMouseEnter
+                       onBlurInput,
+                       onFocusInput
 }) => {
     return (
         <>
@@ -24,8 +24,8 @@ const FormInput = ({
                 required={requiredBool}
                 placeholder={placeholder}
                 onChange={onChangeHandler}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
+                onFocus={onFocusInput}
+                onBlur={onBlurInput}
             />
         </>
     );

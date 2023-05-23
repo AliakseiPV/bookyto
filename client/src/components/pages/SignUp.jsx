@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import FormInput from '../FormInput/FormInput';
-import FormButton from '../FormButton/FormButton';
+import FormInput from '../FormInput';
+import FormButton from '../FormButton';
 import {emailValidation, passwordValidation} from '../../utils/validation';
-import FormError from "../FormError/FormError";
+import FormError from "../FormError";
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('')
@@ -24,11 +24,7 @@ const SignUp = () => {
     }
 
     useEffect(() => {
-        (!passwordError.length && !emailError.length && !repeatPasswordError)
-            ?
-            setDisableButton(false)
-            :
-            setDisableButton(true);
+        setDisableButton(passwordError.length || emailError.length || repeatPasswordError.length)
     }, [passwordError, emailError, repeatPasswordError])
 
     function confirmPasswordHandler (e) {
@@ -82,8 +78,8 @@ const SignUp = () => {
                         name='email'
                         requiredBool={true}
                         onChangeHandler={(event) => emailValidation(event, setEmail, setEmailError)}
-                        onMouseEnter={() => setEmailFocus(true)}
-                        onMouseLeave={() => setEmailFocus(false)}
+                        onFocusInput={() => setEmailFocus(true)}
+                        onBlurInput={() => setEmailFocus(false)}
                     />
                     {(emailFocus && emailError.length) ? <FormError errors={emailError}/> : <></>}
                 </div>
@@ -96,8 +92,8 @@ const SignUp = () => {
                         name='password'
                         requiredBool={true}
                         onChangeHandler={(event) => passwordValidation(event, setPassword, setPasswordError)}
-                        onMouseEnter={() => setPasswordFocus(true)}
-                        onMouseLeave={() => setPasswordFocus(false)}
+                        onFocusInput={() => setPasswordFocus(true)}
+                        onBlurInput={() => setPasswordFocus(false)}
                     />
                     {(passwordFocus && passwordError.length) ? <FormError errors={passwordError}/> : <></>}
                 </div>
@@ -110,8 +106,8 @@ const SignUp = () => {
                         name='confirm'
                         requiredBool={true}
                         onChangeHandler={confirmPasswordHandler}
-                        onMouseEnter={() => setRepeatPasswordFocus(true)}
-                        onMouseLeave={() => setRepeatPasswordFocus(false)}
+                        onFocusInput={() => setRepeatPasswordFocus(true)}
+                        onBlurInput={() => setRepeatPasswordFocus(false)}
                     />
                     {(repeatPasswordFocus && repeatPasswordError.length) ? <FormError errors={repeatPasswordError}/> : <></>}
                 </div>
