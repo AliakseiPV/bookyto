@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import FormInput from '../FormInput';
 import FormButton from '../FormButton';
-import {emailValidation, passwordValidation} from '../../utils/validation';
+import {emailValidation, passwordValidation} from '../../helpers/validation';
 import FormError from "../FormError";
 
 const SignUp = () => {

@@ -11,11 +11,7 @@ export const emailValidation = (event, setEmail, setEmailError) => {
                 error: "Email field is not correct"
             }
         ]
-        for (let element of emailErrors) {
-            if (!element.filter.test(String(emailValue))) {
-                setEmailError(errors => [...errors, element.error])
-            }
-        }
+        checkRegex(emailErrors, emailValue, setEmailError)
         setEmail(emailValue)
     }
 
@@ -23,7 +19,7 @@ export const emailValidation = (event, setEmail, setEmailError) => {
 export const passwordValidation = (event, setPassword, setPasswordError) => {
         setPasswordError([])
         const passwordValue = event.target.value;
-        const regexCheck = [
+        const passwordErrors = [
             {
                 filter: /^\s*\S+.*/,
                 error: "Password is empty"
@@ -54,10 +50,14 @@ export const passwordValidation = (event, setPassword, setPasswordError) => {
             },
         ]
 
-        for (let element of regexCheck) {
-            if (!element.filter.test(String(passwordValue))) {
-                setPasswordError(errors => [...errors, element.error])
-            }
+        checkRegex(passwordErrors, passwordValue, setPasswordError)
+        setPassword(passwordValue)
+}
+
+function checkRegex(errors, value, setValue) {
+    for (let element of errors) {
+        if (!element.filter.test(String(value))) {
+            setValue(errors => [...errors, element.error])
         }
-       setPassword(passwordValue)
     }
+}
