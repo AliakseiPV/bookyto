@@ -1,37 +1,37 @@
 import { useState } from "react";
-import {Input} from "../ui-kit";
-import FormError from "./FormError";
+import {Input, Error} from "../ui-kit";
 
-const FormItem = ({ 
-    validate, 
+const FormItem = ({
     htmlFor,
     labelText,
     nameInput,
     typeInput,
     requiredBool,
     onChangeHandler,
+    errors,
+    setErrors,
+    item,
+    setItem
     }) => {
-    const [item, setItem] = useState(''); 
-    const [error, setError] = useState([validate]);
     const [onFocus, setOnFocus] = useState(false);
 
     return (
         <>
             <Input 
                 htmlFor={htmlFor} 
-                labelText= {labelText} 
+                labelText= {labelText}
                 valueInput={item}
                 typeInput={typeInput}
                 nameInput={nameInput}
                 requiredBool={requiredBool}
                 onChange={(event) => {
-                    onChangeHandler ? setError(onChangeHandler(event)) : setError([])
+                    setErrors(onChangeHandler(event))
                     setItem(event.target.value)
                 }}
                 onFocusInput={() => setOnFocus(true)}
                 onBlurInput={() => setOnFocus(false)}                
             />
-            {(validate && onFocus && error.length) ? <FormError errors={error}/> : <></>}
+            {(onFocus && errors.length) ? <Error errors={errors}/> : <></>}
         </>
     );
 };

@@ -18,7 +18,7 @@ export const passwordValidation = (event) => {
     const passwordErrors = [
         {
             filter: /^\s*\S+.*/,
-            error: "Password is empty"
+            error: "Password field is empty"
         },
         {
             filter: /^(?=[^a-z]*[a-z])/,
@@ -46,6 +46,13 @@ export const passwordValidation = (event) => {
         },
     ]
     return checkRegex(passwordErrors, passwordValue)            
+}
+
+export const repeatPasswordValidation = (event) => {
+    if(!event.target.value) {
+        return ['Password field is empty']
+    }
+    return []
 }
 
 function checkRegex(errors, value) {

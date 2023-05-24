@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import {Input, Button} from '../../ui-kit';
-import {emailValidation, passwordValidation} from '../../helpers/validation';
-import FormError from "../FormError";
+import {emailValidation, passwordValidation, repeatPasswordValidation} from '../../helpers/validation';
 import FormItem from '../FormItem';
+import {LOGIN_ROUTE} from "../../utils/consts";
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [repeatPassword, setRepeatPassword] = useState('')
     const [emailError, setEmailError] = useState(['Email field is empty'])
     const [passwordError, setPasswordError] = useState(['Password field is empty'])
     const [repeatPasswordError, setRepeatPasswordError] = useState(['Password field is empty'])
@@ -15,11 +18,9 @@ const SignUp = () => {
 
     function handleSubmit (e) {
         e.preventDefault();
-        if((e.target.password.value !== e.target.confirm.value))
-        {
-            setRepeatPasswordError("Passwords did not match")
+        if(password !== repeatPassword) {
+            setRepeatPassword('')
         }
-        
     }
 
     useEffect(() => {
@@ -31,7 +32,6 @@ const SignUp = () => {
             <form onSubmit={handleSubmit}>
                 <h1>Sign Up</h1>
                 <div>
-                 
                     <Input 
                         htmlFor='firstName' 
                         labelText='First Name' 
@@ -57,34 +57,44 @@ const SignUp = () => {
                 </div>
                 <div>
                     <FormItem
-                        validate='Email field is empty'
                         htmlFor='email'
                         labelText='Email'
                         nameInput='email'
                         typeInput='email'
                         requiredBool={true}
                         onChangeHandler={emailValidation}
+                        errors={emailError}
+                        setErrors={setEmailError}
+                        item={email}
+                        setItem={setEmail}
                     />
                 </div>
                 <div>
                     <FormItem
-                        validate='Password field is empty'
                         htmlFor='password'
                         labelText='Password'
                         nameInput='password'
                         typeInput='password'
                         requiredBool={true}
                         onChangeHandler={passwordValidation}
+                        errors={passwordError}
+                        setErrors={setPasswordError}
+                        item={password}
+                        setItem={setPassword}
                     />
                 </div>
                 <div>
                     <FormItem
-                        validate={"Password field is empty"}
                         htmlFor='password_confirmation'
                         labelText='Confirm password'
                         nameInput='confirm'
                         typeInput='password'
                         requiredBool={true}
+                        onChangeHandler={repeatPasswordValidation}
+                        errors={repeatPasswordError}
+                        setErrors={setRepeatPasswordError}
+                        item={repeatPassword}
+                        setItem={setRepeatPassword}
                     />
                 </div>
                 <div>
@@ -95,7 +105,7 @@ const SignUp = () => {
                             labelText='Buyer'
                             valueInput='buyer'
                             typeInput='radio'
-                            name='user_role'
+                            nameInput='user_role'
                         />
                     </div>
                     <div>
@@ -104,21 +114,23 @@ const SignUp = () => {
                             labelText='Seller'
                             valueInput='seller'
                             typeInput='radio'
-                            name='user_role'
+                            nameInput='user_role'
                         />
                     </div>
                 </div>
                 <div>
                     <Button
                         buttonType='submit'
-                        isDisabled={false}
+                        isDisabled={disableButton}
                         buttonText='Sign Up'
                     />
                 </div>
                 <div>
                     Already have an account?
                     <span>
-                        <Link to="/login">Login</Link>
+                        <Link to={LOGIN_ROUTE}>
+                            Login
+                        </Link>
                     </span>
                 </div>
             </form>

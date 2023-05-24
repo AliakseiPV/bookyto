@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FormError = ({errors}) => {
+const ErrorList = ({errors}) => {
     return (
         <ul>
             {errors.map(error =>
@@ -10,4 +10,4 @@ const FormError = ({errors}) => {
     );
 };
 
-export default FormError;
+export default ErrorList;
