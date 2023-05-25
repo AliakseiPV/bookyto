@@ -25,56 +25,52 @@ const SignUp = () => {
             <Form 
                 onSubmit={handleSubmit} 
                 initialValues = {initialValues} 
-                errorChecks = {{email: emailErrors, password: passwordErrors}}
+                errorChecks = {{
+                    email: emailErrors, 
+                    password: passwordErrors, 
+                }}
             >
                 <FormItem
                     htmlFor='firstName'
                     labelText='First Name'
                     nameInput='firstName'
                     typeInput='firstName'
-                    // requiredBool={true}
                 />
                 <FormItem
                     htmlFor='lastName'
                     labelText='Last Name'
                     nameInput='lastName'
                     typeInput='lastName'
-                    // requiredBool={true}
                 />
                 <FormItem
                     htmlFor='email'
                     labelText='Email'
                     nameInput='email'
                     typeInput='email'
-                    // requiredBool={true}
                 />
                 <FormItem
                     htmlFor='password'
                     labelText='Password'
                     nameInput='password'
                     typeInput='password'
-                    // requiredBool={true}
                 />
                 <FormItem
                     htmlFor='password_confirmation'
                     labelText='Confirm password'
                     nameInput='repeatPassword'
                     typeInput='password'
-                    // requiredBool={true}
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Buyer'
                     nameInput='user_role'
                     typeInput='radio'
-                    // requiredBool={true}
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Seller'
                     nameInput='user_role'
                     typeInput='radio'
-                    // requiredBool={true}
                 />                
             </Form>
             <div>

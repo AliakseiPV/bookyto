@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../ui-kit';
-// import {validation} from '../helpers/validation'
+import {validation, comparePasswords} from '../helpers/validation'
 
 export const FormContext = React.createContext({
     form: {}, 
@@ -18,29 +18,19 @@ const Form = (props) => {
         setForm({...form, [name]: value})
 
         if(errorChecks[name]) {
-            validation(errorChecks, setInputErrors, name, value)
+            validation(errorChecks, inputErrors, setInputErrors, name, value) 
+            comparePasswords('repeatPassword', form.repeatPassword, value, inputErrors, setInputErrors) 
         }
-
-    }
-
-    const validation = (errorsFilter, setErrors, name, value) => {
-        let errorArray = []
-
-        for (let element of errorsFilter[name]) {
-            if (!element.filter.test(String(value))) {
-                errorArray = [...errorArray, element.error]
-            }
+        if(name === 'repeatPassword') {
+            comparePasswords('repeatPassword', form.password, value, inputErrors, setInputErrors)
         }
-        // setErrors({[name]: errorArray})
-        setErrors(inputErrors.set(name, errorArray))
-        console.log(inputErrors.get(name).length)
     }
 
     useEffect(() => {
-        // console.log(inputErrors)
-        // console.log(inputErrors['email'])
-        // console.log(inputErrors['password'])
-    },[inputErrors])
+        console.log(form.repeatPassword)
+        console.log(form.password)
+        
+    }, [form.repeatPassword, form.password])
     
     return (
         <form onSubmit={onSubmit}>

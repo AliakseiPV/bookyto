@@ -39,5 +39,6 @@ export const passwordErrors = [
         error: "Password has to be between 8 to 32 characters long"
     },
 ]
+ 
 
 
