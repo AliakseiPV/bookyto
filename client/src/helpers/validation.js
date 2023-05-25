@@ -10,8 +10,20 @@ export const validation = (errorsFilter, errors, setErrors, name, value) => {
 
 export const comparePasswords = (inputName, password, comparedPassword, errors, setErrors) => {
     if (password !== comparedPassword) {
-        setErrors(errors.set(inputName,['Passwords are not correct']))
+        setErrors(errors.set(inputName,['Passwords do not match']))
     } else {
         setErrors(errors.set(inputName,[]))
     }
+}
+
+export const finalValidation = (errorsMap, setButtonDisable) => {
+    let errors = []
+    for ( let amount of errorsMap.values()) {
+        errors = errors.concat(amount)
+    }
+    if(errors.length) {
+        setButtonDisable(true)
+    } else {
+        setButtonDisable(false)
+    }       
 }

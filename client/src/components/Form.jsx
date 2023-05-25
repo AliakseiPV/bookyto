@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '../ui-kit';
-import {validation, comparePasswords} from '../helpers/validation'
+import {validation, comparePasswords, finalValidation} from '../helpers/validation'
 
 export const FormContext = React.createContext({
     form: {}, 
@@ -17,21 +17,17 @@ const Form = (props) => {
         const {name, value} = event.target;
         setForm({...form, [name]: value})
 
-        if(errorChecks[name]) {
+        if (errorChecks[name]) {
             validation(errorChecks, inputErrors, setInputErrors, name, value) 
             comparePasswords('repeatPassword', form.repeatPassword, value, inputErrors, setInputErrors) 
         }
-        if(name === 'repeatPassword') {
+        if (name === 'repeatPassword') {
             comparePasswords('repeatPassword', form.password, value, inputErrors, setInputErrors)
         }
+
+        finalValidation(inputErrors, setButtonDisable)
     }
 
-    useEffect(() => {
-        console.log(form.repeatPassword)
-        console.log(form.password)
-        
-    }, [form.repeatPassword, form.password])
-    
     return (
         <form onSubmit={onSubmit}>
             <FormContext.Provider value={{
