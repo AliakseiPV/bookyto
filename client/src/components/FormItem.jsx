@@ -28,7 +28,12 @@ const FormItem = ({
                 onFocusInput={() => setOnFocus(true)}
                 onBlurInput={() => setOnFocus(false)}                
             />
-            {(inputErrors[nameInput] && onFocus) ? <Error errors={inputErrors[nameInput]}/> : <></>}
+            {(inputErrors.get(nameInput) && inputErrors.get(nameInput).length && onFocus)
+                ? 
+                <Error errors={inputErrors.get(nameInput)}/>
+                : 
+                <></>
+            }
         </>
     );
 };
