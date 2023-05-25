@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../ui-kit';
+import {validation} from '../helpers/validation'
 
 export const FormContext = React.createContext({
     form: {}, 
@@ -10,29 +11,27 @@ const Form = (props) => {
   
     const [form, setForm] = useState(initialValues)
     const [inputErrors, setInputErrors] = useState({})
+    const [buttonDisable, setButtonDisable] = useState(false)
 
     const handleChange = (event) => {
         const {name, value} = event.target;
         setForm({...form, [name]: value})
 
-        if(errorChecks && errorChecks[name]) {
-            handleErrors(errorChecks, name, value)
-        }
+        if(errorChecks[name]) {
+            validation(errorChecks, setInputErrors, name, value)
         
+        }
+
     }
 
-    const handleErrors = (error, name, value) => {
-        let errorArray = []
-        for (let element of error[name]) {
-            if (!element.filter.test(String(value))) {
-                errorArray = [...errorArray, element.error]
-            }
-        }
-        setInputErrors({[name]: errorArray})
-    }
+    useEffect(() => {
+        console.log(inputErrors)
+        // console.log(inputErrors['email'])
+        // console.log(inputErrors['password'])
+    },[inputErrors])
     
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <FormContext.Provider value={{
                 form, handleChange, inputErrors
             }}>
@@ -41,7 +40,7 @@ const Form = (props) => {
 
             <Button
                 buttonType='submit'
-                isDisabled={false}
+                isDisabled={buttonDisable}
                 buttonText='Sign Up'
             />
         </form>

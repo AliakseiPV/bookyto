@@ -1,66 +1,9 @@
-export const emailValidation = (event) => {
-    const emailValue = event.target.value
-        const emailErrors = [
-            {
-                filter: /^\s*\S+.*/,
-                error: "Email field is empty"
-            },
-            {
-                filter: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
-                error: "Email field is not correct"
-            }
-        ]
-        return checkRegex(emailErrors, emailValue)        
-}
-
-export const passwordValidation = (event) => {
-    const passwordValue = event.target.value;
-    const passwordErrors = [
-        {
-            filter: /^\s*\S+.*/,
-            error: "Password field is empty"
-        },
-        {
-            filter: /^(?=[^a-z]*[a-z])/,
-            error: "Password must include at least one lower case"
-        },
-        {
-            filter: /^(?=[^A-Z]*[A-Z])/,
-            error: "Password must include at least one upper case"
-        },
-        {
-            filter: /^(?=\D*\d)/,
-            error: "Password must include at least one number"
-        },
-        {
-            filter: /^(?=[^!#%]*[!#%])/,
-            error: "Password must include at one special character (only !#% are allowed)"
-        },
-        {
-            filter: /^([A-Za-z0-9!#%])(?!.* )/,
-            error: "Password has symbols which are not allowed"
-        },
-        {
-            filter: /.{8,32}/,
-            error: "Password has to be between 8 to 32 characters long"
-        },
-    ]
-    return checkRegex(passwordErrors, passwordValue)            
-}
-
-export const repeatPasswordValidation = (event) => {
-    if(!event.target.value) {
-        return ['Password field is empty']
-    }
-    return []
-}
-
-function checkRegex(errors, value) {
+export const validation = (errorsFilter, setErrors, name, value) => {
     let errorArray = []
-    for (let element of errors) {
+    for (let element of errorsFilter[name]) {
         if (!element.filter.test(String(value))) {
             errorArray = [...errorArray, element.error]
         }
     }
-    return errorArray
+    setErrors({[name]: errorArray})
 }

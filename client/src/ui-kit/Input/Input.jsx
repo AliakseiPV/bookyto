@@ -6,7 +6,7 @@ const FormInput = ({
                        nameInput,
                        typeInput,
                        valueInput,
-                       requiredBool,
+                       requiredBool = true,
                        placeholder,
                        onChange,
                        onBlurInput,
