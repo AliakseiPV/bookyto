@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {Input, Error} from "../ui-kit";
+import { FormContext } from "./Form";
 
 const FormItem = ({
     htmlFor,
@@ -7,31 +8,27 @@ const FormItem = ({
     nameInput,
     typeInput,
     requiredBool,
-    onChangeHandler,
-    errors,
-    setErrors,
-    item,
-    setItem
     }) => {
-    const [onFocus, setOnFocus] = useState(false);
 
+    const formContext = useContext(FormContext)
+    const {form, handleChange, inputErrors} = formContext
+
+    const [onFocus, setOnFocus] = useState(false);
+    
     return (
         <>
             <Input 
                 htmlFor={htmlFor} 
                 labelText= {labelText}
-                valueInput={item}
+                valueInput={form[nameInput]}
                 typeInput={typeInput}
                 nameInput={nameInput}
                 requiredBool={requiredBool}
-                onChange={(event) => {
-                    setErrors(onChangeHandler(event))
-                    setItem(event.target.value)
-                }}
+                onChange={handleChange}
                 onFocusInput={() => setOnFocus(true)}
                 onBlurInput={() => setOnFocus(false)}                
             />
-            {(onFocus && errors.length) ? <Error errors={errors}/> : <></>}
+            {(inputErrors[nameInput] && onFocus) ? <Error errors={inputErrors[nameInput]}/> : <></>}
         </>
     );
 };
