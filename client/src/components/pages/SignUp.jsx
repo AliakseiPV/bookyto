@@ -4,6 +4,7 @@ import FormItem from '../FormItem';
 import {LOGIN_ROUTE} from "../../utils/consts";
 import Form from '../Form'
 import {emailErrors, passwordErrors} from '../../helpers/errors'
+import {signUpValidation} from '../../helpers/validation'
 
 const SignUp = () => {
 
@@ -29,6 +30,7 @@ const SignUp = () => {
                     email: emailErrors, 
                     password: passwordErrors, 
                 }}
+                validation={signUpValidation}
             >
                 <FormItem
                     htmlFor='firstName'

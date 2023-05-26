@@ -28,8 +28,11 @@ const checkForErrors = (errorsMap, setButtonDisable) => {
     }       
 }
 
-export const validation = (errorChecks, inputName, password, repeatPassword, currentInputValue, errors, setErrors, setButtonDisable) => {
-    if (errorChecks[inputName]) {
+export const signUpValidation = (errorChecks, inputName, currentInputValue, errors, setErrors, setButtonDisable, password, repeatPassword) => {
+    if(inputName === 'email') {
+        createErrors(errorChecks, errors, setErrors, inputName, currentInputValue)
+    }
+    if (inputName === 'password') {
         createErrors(errorChecks, errors, setErrors, inputName, currentInputValue)  
         comparePasswords('repeatPassword', repeatPassword, currentInputValue, errors, setErrors) 
     }
