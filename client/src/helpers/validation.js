@@ -1,4 +1,4 @@
-export const validation = (errorsFilter, errors, setErrors, name, value) => {
+const createErrors = (errorsFilter, errors, setErrors, name, value) => {
     let errorArray = []
     for (let element of errorsFilter[name]) {
         if (!element.filter.test(String(value))) {
@@ -8,7 +8,7 @@ export const validation = (errorsFilter, errors, setErrors, name, value) => {
     setErrors(errors.set(name, errorArray))
 }
 
-export const comparePasswords = (inputName, password, comparedPassword, errors, setErrors) => {
+const comparePasswords = (inputName, password, comparedPassword, errors, setErrors) => {
     if (password !== comparedPassword) {
         setErrors(errors.set(inputName,['Passwords do not match']))
     } else {
@@ -16,7 +16,7 @@ export const comparePasswords = (inputName, password, comparedPassword, errors, 
     }
 }
 
-export const finalValidation = (errorsMap, setButtonDisable) => {
+const checkForErrors = (errorsMap, setButtonDisable) => {
     let errors = []
     for ( let amount of errorsMap.values()) {
         errors = errors.concat(amount)
@@ -26,4 +26,15 @@ export const finalValidation = (errorsMap, setButtonDisable) => {
     } else {
         setButtonDisable(false)
     }       
+}
+
+export const validation = (errorChecks, inputName, password, repeatPassword, currentInputValue, errors, setErrors, setButtonDisable) => {
+    if (errorChecks[inputName]) {
+        createErrors(errorChecks, errors, setErrors, inputName, currentInputValue)  
+        comparePasswords('repeatPassword', repeatPassword, currentInputValue, errors, setErrors) 
+    }
+    if (inputName === 'repeatPassword') {
+        comparePasswords('repeatPassword', password, currentInputValue, errors, setErrors)
+    }
+    checkForErrors(errors, setButtonDisable)
 }
