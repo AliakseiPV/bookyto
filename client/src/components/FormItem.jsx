@@ -11,7 +11,7 @@ const FormItem = ({
     }) => {
 
     const formContext = useContext(FormContext)
-    const {values, setValue, errors} = formContext
+    const {values, changeHandler, errors} = formContext
 
     const [onFocus, setOnFocus] = useState(false);
     
@@ -24,7 +24,7 @@ const FormItem = ({
                 typeInput={typeInput}
                 nameInput={nameInput}
                 requiredBool={requiredBool}
-                onChange={setValue}
+                onChange={changeHandler}
                 onFocusInput={() => setOnFocus(true)}
                 onBlurInput={() => setOnFocus(false)}                
             />

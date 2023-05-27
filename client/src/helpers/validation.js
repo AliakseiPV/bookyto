@@ -1,43 +1,47 @@
-const createErrors = (errorsFilter, errors, setErrors, name, value) => {
+const createErrors = (errorsFilter, name, value) => {
     let errorArray = []
     for (let element of errorsFilter[name]) {
         if (!element.filter.test(String(value))) {
             errorArray = [...errorArray, element.error]
         }
     }
-    setErrors(errors.set(name, errorArray))
+    return errorArray
 }
 
-const comparePasswords = (inputName, password, comparedPassword, errors, setErrors) => {
+const comparePasswords = (password, comparedPassword) => {
     if (password !== comparedPassword) {
-        setErrors(errors.set(inputName,['Passwords do not match']))
+        return ['Passwords do not match']
     } else {
-        setErrors(errors.set(inputName,[]))
+        return []
     }
 }
 
-const checkForErrors = (errorsMap, setButtonDisable) => {
+const checkForErrors = (errorsMap) => {
     let errors = []
     for (let amount of errorsMap.values()) {
         errors = errors.concat(amount)
     }
-    if (errors.length) {
-        setButtonDisable(true)
-    } else {
-        setButtonDisable(false)
-    }
+    return !!errors.length
 }
 
-export const signUpValidation = (formValues, inputName, currentInputValue, errors, setErrors, errorChecks, setButtonDisable) => {
+export const signUpValidation = (
+    formValues,
+    inputName,
+    currentInputValue,
+    errors,
+    setErrors,
+    errorChecks,
+    setButtonDisable
+) => {
     if (inputName === 'email') {
-        createErrors(errorChecks, errors, setErrors, inputName, currentInputValue)
+        setErrors(errors.set(inputName, createErrors(errorChecks, inputName, currentInputValue)))
     }
     if (inputName === 'password') {
-        createErrors(errorChecks, errors, setErrors, inputName, currentInputValue)  
-        comparePasswords('repeatPassword', formValues.repeatPassword, currentInputValue, errors, setErrors)
+        setErrors(errors.set(inputName, createErrors(errorChecks, inputName, currentInputValue)))
+        setErrors(errors.set('repeatPassword', comparePasswords(formValues.repeatPassword, currentInputValue)))
     }
     if (inputName === 'repeatPassword') {
-        comparePasswords('repeatPassword', formValues.password, currentInputValue, errors, setErrors)
+        setErrors(errors.set('repeatPassword', comparePasswords(formValues.password, currentInputValue)))
     }
-    checkForErrors(errors, setButtonDisable)
+    setButtonDisable(checkForErrors(errors, setButtonDisable))
 }

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import FormItem from '../FormItem';
 import {LOGIN_ROUTE} from "../../utils/consts";
@@ -27,6 +27,7 @@ const SignUp = () => {
                 onSubmit={handleSubmit}
                 validation={signUpValidation}
                 validationParams={validationParams}
+                initialValues={signUpValues}
             >
                 <FormItem
                     htmlFor='firstName'

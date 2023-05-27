@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
-import {signUpValues} from "../helpers/initialValues";
 
 export const FormContext = React.createContext({
     form: {}
 })
 
 const Form = (props) => {
-    const {children, onSubmit, validationParams, validation}= props
+    const {children, onSubmit, validationParams, validation, initialValues}= props
 
     const [errors, setErrors] = useState(new Map())
-    const [values, setValues] = useState(signUpValues)
+    const [values, setValues] = useState(initialValues)
 
-    const setValue = (event) => {
+    const changeHandler = (event) => {
         const {name, value} = event.target;
         setValues({...values, [name]: value})
-        validation && validation(values, name, value, errors, setErrors, ...validationParams)
+        validation(values, name, value, errors, setErrors, ...validationParams)
     }
 
     return (
         <FormContext.Provider value={{
-            values, setValue, errors
+            values, changeHandler, errors
         }}>
             <form onSubmit={onSubmit}>
                 {children}
