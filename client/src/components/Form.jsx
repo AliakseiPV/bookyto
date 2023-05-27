@@ -30,14 +30,13 @@ const Form = (props) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
             <FormContext.Provider value={{
                 values, onChange, errors
             }}>
-                {children}
+                <form onSubmit={onSubmit}>
+                    {children}
+                </form>
             </FormContext.Provider>
-
-        </form>
     );
 };
 
