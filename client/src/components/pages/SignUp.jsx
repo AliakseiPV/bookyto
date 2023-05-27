@@ -6,19 +6,12 @@ import Form, {FormContext} from '../Form'
 import {errorChecks} from '../../helpers/errors'
 import {signUpValidation} from '../../helpers/validation'
 import {Button} from "../../ui-kit";
+import {signUpValues} from "../../helpers/initialValues";
 
 
 const SignUp = () => {
-    const initialValues = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        repeatPassword: "",
-    }
-
     const [buttonDisable, setButtonDisable] = useState(false)
-    const [values, setValues] = useState(initialValues)
+    const [values, setValues] = useState(signUpValues)
 
     const validationParams = [
         errorChecks,
@@ -37,9 +30,9 @@ const SignUp = () => {
             <Form 
                 onSubmit={handleSubmit}
                 validation={signUpValidation}
+                validationParams={validationParams}
                 values={values}
                 setValues={setValues}
-                validationParams={validationParams}
             >
                 <FormItem
                     htmlFor='firstName'
@@ -83,7 +76,6 @@ const SignUp = () => {
                     nameInput='user_role'
                     typeInput='radio'
                 />
-
                 <Button
                     buttonType='submit'
                     isDisabled={buttonDisable}
