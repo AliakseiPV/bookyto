@@ -1,4 +1,4 @@
-export const emailErrors = [
+const emailErrors = [
     {
         filter: /^\s*\S+.*/,
         error: "Email field is empty"
@@ -9,7 +9,7 @@ export const emailErrors = [
     }
 ]        
 
-export const passwordErrors = [
+const passwordErrors = [
     {
         filter: /^\s*\S+.*/,
         error: "Password field is empty"
@@ -39,6 +39,12 @@ export const passwordErrors = [
         error: "Password has to be between 8 to 32 characters long"
     },
 ]
+
+export const errorChecks = {
+    email: emailErrors,
+    password: passwordErrors
+}
+
 
 
 

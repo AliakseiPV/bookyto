@@ -28,7 +28,7 @@ const checkForErrors = (errorsMap, setButtonDisable) => {
     }       
 }
 
-export const signUpValidation = (errorChecks, inputName, currentInputValue, errors, setErrors, setButtonDisable, password, repeatPassword) => {
+export const signUpValidation = ( inputName, currentInputValue, errors, setErrors, errorChecks, setButtonDisable, password, repeatPassword) => {
     if(inputName === 'email') {
         createErrors(errorChecks, errors, setErrors, inputName, currentInputValue)
     }

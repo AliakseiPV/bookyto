@@ -1,20 +1,31 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import FormItem from '../FormItem';
 import {LOGIN_ROUTE} from "../../utils/consts";
-import Form from '../Form'
-import {emailErrors, passwordErrors} from '../../helpers/errors'
+import Form, {FormContext} from '../Form'
+import {errorChecks} from '../../helpers/errors'
 import {signUpValidation} from '../../helpers/validation'
+import {Button} from "../../ui-kit";
+
 
 const SignUp = () => {
-
     const initialValues = {
         firstName: "",
-        lastName: "", 
+        lastName: "",
         email: "",
-        password: "", 
+        password: "",
         repeatPassword: "",
     }
+
+    const [buttonDisable, setButtonDisable] = useState(false)
+    const [values, setValues] = useState(initialValues)
+
+    const validationParams = [
+        errorChecks,
+        setButtonDisable,
+        values.password,
+        values.repeatPassword
+    ]
 
     function handleSubmit (e) {
         e.preventDefault();
@@ -24,13 +35,11 @@ const SignUp = () => {
         <div>
             <h1>Sign Up</h1>
             <Form 
-                onSubmit={handleSubmit} 
-                initialValues = {initialValues} 
-                errorChecks = {{
-                    email: emailErrors, 
-                    password: passwordErrors, 
-                }}
+                onSubmit={handleSubmit}
                 validation={signUpValidation}
+                values={values}
+                setValues={setValues}
+                validationParams={validationParams}
             >
                 <FormItem
                     htmlFor='firstName'
@@ -73,7 +82,13 @@ const SignUp = () => {
                     labelText='Seller'
                     nameInput='user_role'
                     typeInput='radio'
-                />                
+                />
+
+                <Button
+                    buttonType='submit'
+                    isDisabled={buttonDisable}
+                    buttonText='Sign Up'
+                />
             </Form>
             <div>
                 Already have an account?

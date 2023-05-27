@@ -6,25 +6,27 @@ export const FormContext = React.createContext({
 })
 
 const Form = (props) => {
-    const {children, onSubmit, initialValues, errorChecks, validation} = props
+    const {children, onSubmit, values, setValues, validationParams, validation}= props
   
-    const [values, setValues] = useState(initialValues)
+    // const [values, setValues] = useState(initialValues)
     const [errors, setErrors] = useState(new Map())
-    const [buttonDisable, setButtonDisable] = useState(false)
+
 
     const onChange = (event) => {
         const {name, value} = event.target;
         setValues({...values, [name]: value})
+        console.log(validation(name, value, errors, setErrors, ...validationParams))
 
-        validation(
-            errorChecks, 
-            name,  
-            value, errors, 
-            setErrors, 
-            setButtonDisable,
-            values.password, 
-            values.repeatPassword,
-        )
+        // validation(
+        //     errorChecks,
+        //     name,
+        //     value,
+        //     errors,
+        //     setErrors,
+        //     setButtonDisable,
+        //     values.password,
+        //     values.repeatPassword,
+        // )
     }
 
     return (
@@ -35,11 +37,6 @@ const Form = (props) => {
                 {children}
             </FormContext.Provider>
 
-            <Button
-                buttonType='submit'
-                isDisabled={buttonDisable}
-                buttonText='Sign Up'
-            />
         </form>
     );
 };
