@@ -8,16 +8,12 @@ import {signUpValidation} from '../../helpers/validation'
 import {Button} from "../../ui-kit";
 import {signUpValues} from "../../helpers/initialValues";
 
-
 const SignUp = () => {
     const [buttonDisable, setButtonDisable] = useState(false)
-    const [values, setValues] = useState(signUpValues)
 
     const validationParams = [
         errorChecks,
-        setButtonDisable,
-        values.password,
-        values.repeatPassword
+        setButtonDisable
     ]
 
     function handleSubmit (e) {
@@ -31,8 +27,6 @@ const SignUp = () => {
                 onSubmit={handleSubmit}
                 validation={signUpValidation}
                 validationParams={validationParams}
-                values={values}
-                setValues={setValues}
             >
                 <FormItem
                     htmlFor='firstName'
