@@ -9,7 +9,7 @@ const Form = (props) => {
 
     const [errors, setErrors] = useState(new Map())
 
-    const onChange = (event) => {
+    const setValue = (event) => {
         const {name, value} = event.target;
         setValues({...values, [name]: value})
         validation && validation(name, value, errors, setErrors, ...validationParams)
@@ -17,7 +17,7 @@ const Form = (props) => {
 
     return (
         <FormContext.Provider value={{
-            values, onChange, errors
+            values, setValue, errors
         }}>
             <form onSubmit={onSubmit}>
                 {children}

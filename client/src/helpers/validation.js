@@ -15,17 +15,16 @@ const comparePasswords = (inputName, password, comparedPassword, errors, setErro
         setErrors(errors.set(inputName,[]))
     }
 }
-
 const checkForErrors = (errorsMap, setButtonDisable) => {
     let errors = []
-    for ( let amount of errorsMap.values()) {
+    for (let amount of errorsMap.values()) {
         errors = errors.concat(amount)
     }
     if(errors.length) {
         setButtonDisable(true)
     } else {
         setButtonDisable(false)
-    }       
+    }
 }
 
 export const signUpValidation = ( inputName, currentInputValue, errors, setErrors, errorChecks, setButtonDisable, password, repeatPassword) => {
