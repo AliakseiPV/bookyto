@@ -76,7 +76,7 @@ const SignUp = () => {
                 <Button
                     className={"Button button__small button__medium"}
                     buttonType='submit'
-                    isDisabled={buttonDisable}
+                    // isDisabled={buttonDisable}
                     buttonText='Sign Up'
                 />
             </Form>
