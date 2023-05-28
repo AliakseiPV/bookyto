@@ -1,8 +1,10 @@
 import React from 'react';
+import "./Button.scss"
 
-function FormButton({buttonType, isDisabled, buttonText, onClickHandler}) {
+function Button({buttonType, isDisabled, buttonText, onClickHandler, className}) {
     return (
         <button
+            className={className}
             type={buttonType}
             disabled={isDisabled}
             onClick={onClickHandler}
@@ -12,4 +14,4 @@ function FormButton({buttonType, isDisabled, buttonText, onClickHandler}) {
     );
 }
 
-export default FormButton;
+export default Button;

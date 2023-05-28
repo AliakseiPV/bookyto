@@ -72,6 +72,7 @@ const SignUp = () => {
                     typeInput='radio'
                 />
                 <Button
+                    className={"Button button__small button__medium"}
                     buttonType='submit'
                     isDisabled={buttonDisable}
                     buttonText='Sign Up'
