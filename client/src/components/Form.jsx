@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
+import {validation} from '../helpers/validation'
 
 export const FormContext = React.createContext({
     form: {}
 })
 
 const Form = (props) => {
-    const {children, onSubmit, validationParams, validation, initialValues}= props
+    const {children, onSubmit, validationParams, initialValues}= props
 
-    const [errors, setErrors] = useState(new Map())
+    const [errors, setErrors] = useState({})
     const [values, setValues] = useState(initialValues)
 
-    const changeHandler = (event) => {
+    const changeHandler = async (event) => {
         const {name, value} = event.target;
-        setValues({...values, [name]: value})
-        validation(values, name, value, errors, setErrors, ...validationParams)
+        const newValues = {...values, [name]: value}
+        
+        setValues(newValues)
+        setErrors({...errors, [name]: validation(name, value, newValues, validationParams)}) 
     }
 
     return (

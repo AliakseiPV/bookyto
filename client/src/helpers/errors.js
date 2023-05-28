@@ -37,12 +37,28 @@ const passwordErrors = [
     {
         filter: /.{8,32}/,
         error: "Password has to be between 8 to 32 characters long"
+    }
+]
+
+const repeatPasswordErrors = [
+    {
+        filter: /^\s*\S+.*/,
+        error: "Password field is empty"
     },
+    {
+        filter: (values) => {
+            if (values.repeatPassword !== values.password) {
+                return "Passwords do not matches"
+            }
+            return null;
+        }
+    }
 ]
 
 export const errorChecks = {
     email: emailErrors,
-    password: passwordErrors
+    password: passwordErrors,
+    repeatPassword: repeatPasswordErrors
 }
 
 

@@ -1,20 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import FormItem from '../FormItem';
 import {LOGIN_ROUTE} from "../../utils/consts";
-import Form, {FormContext} from '../Form'
+import Form  from '../Form'
 import {errorChecks} from '../../helpers/errors'
-import {signUpValidation} from '../../helpers/validation'
 import {Button} from "../../ui-kit";
 import {signUpValues} from "../../helpers/initialValues";
 
 const SignUp = () => {
-    const [buttonDisable, setButtonDisable] = useState(false)
-
-    const validationParams = [
-        errorChecks,
-        setButtonDisable
-    ]
+    // const [buttonDisable, setButtonDisable] = useState(false)
 
     function handleSubmit (e) {
         e.preventDefault();
@@ -25,8 +19,7 @@ const SignUp = () => {
             <h1>Sign Up</h1>
             <Form 
                 onSubmit={handleSubmit}
-                validation={signUpValidation}
-                validationParams={validationParams}
+                validationParams={errorChecks}
                 initialValues={signUpValues}
             >
                 <FormItem
@@ -71,6 +64,15 @@ const SignUp = () => {
                     nameInput='user_role'
                     typeInput='radio'
                 />
+                {/* <FormItem>
+                    {(error) => 
+                        <Button
+                            buttonType='submit'
+                            isDisabled={error}
+                            buttonText='Sign Up'
+                        />
+                    }
+                </FormItem> */}
                 <Button
                     className={"Button button__small button__medium"}
                     buttonType='submit'
