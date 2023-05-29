@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
-import {Input, Error} from "../ui-kit";
-import { FormContext } from "./Form";
+import { useContext, useState } from "react"
+import {Input, Error} from "../ui-kit"
+import { FormContext } from "./Form"
 
 const FormItem = ({
     htmlFor,

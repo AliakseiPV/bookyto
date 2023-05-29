@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {validation} from '../helpers/validation'
 
 export const FormContext = React.createContext({
@@ -14,7 +14,7 @@ const Form = (props) => {
     const changeHandler = async (event) => {
         const {name, value} = event.target;
         const newValues = {...values, [name]: value}
-        
+
         setValues(newValues)
         setErrors({...errors, [name]: validation(name, value, newValues, validationParams)}) 
     }

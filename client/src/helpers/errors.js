@@ -50,7 +50,7 @@ const repeatPasswordErrors = [
             if (values.repeatPassword !== values.password) {
                 return "Passwords do not matches"
             }
-            return null;
+            return null
         }
     }
 ]
