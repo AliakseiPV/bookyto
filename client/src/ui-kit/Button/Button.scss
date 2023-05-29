@@ -3,12 +3,18 @@
   border: none;
   font: inherit;
   color: inherit;
-  background-color: transparent;
+  background-color: cornflowerblue;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 15px;
   &.button__medium {
     padding: 10px;
     margin: 5px;
+    width: 25%;
+  }
+  &.button__large {
+    padding: 10px;
+    margin: 5px;
+    width: 65%;
   }
 }
 

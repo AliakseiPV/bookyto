@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import {Input, Error} from "../ui-kit"
-import { FormContext } from "./Form"
+import { FormContext } from "./Form/Form"
+import '../pages/Styles/SignUp.scss'
 
 const FormItem = ({
     htmlFor,
@@ -8,6 +9,7 @@ const FormItem = ({
     nameInput,
     typeInput,
     requiredBool,
+    className
     }) => {
 
     const formContext = useContext(FormContext)
@@ -26,7 +28,8 @@ const FormItem = ({
                 requiredBool={requiredBool}
                 onChange={changeHandler}
                 onFocusInput={() => setOnFocus(true)}
-                onBlurInput={() => setOnFocus(false)}                
+                onBlurInput={() => setOnFocus(false)}
+                className={className}
             />
             {(errors[nameInput]?.length && onFocus)
                 ? 

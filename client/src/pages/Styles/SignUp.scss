@@ -1,0 +1,23 @@
+.SignUp__Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+
+.SignUp__Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px black;
+  width: 35%;
+  padding: 10px;
+}
+.SignUp__Link {
+  margin: 4px 0;
+}

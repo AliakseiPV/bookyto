@@ -1,6 +1,7 @@
 import React from 'react';
+import './Input.scss'
 
-const FormInput = ({
+const Input = ({
                        htmlFor,
                        labelText,
                        nameInput,
@@ -10,7 +11,8 @@ const FormInput = ({
                        placeholder,
                        onChange,
                        onBlurInput,
-                       onFocusInput
+                       onFocusInput,
+                       className
 }) => {
     return (
         <>
@@ -26,9 +28,10 @@ const FormInput = ({
                 onChange={onChange}
                 onFocus={onFocusInput}
                 onBlur={onBlurInput}
+                className={className}
             />
         </>
     );
 };
 
-export default FormInput;
+export default Input;

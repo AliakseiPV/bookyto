@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import {validation} from '../helpers/validation'
+import {validation} from '../../helpers/validation'
+import './Form.scss'
 
 export const FormContext = React.createContext({
     form: {}
 })
 
 const Form = (props) => {
-    const {children, onSubmit, validationParams, initialValues}= props
+    const {children, onSubmit, validationParams, initialValues, className}= props
 
     const [errors, setErrors] = useState({})
     const [values, setValues] = useState(initialValues)
@@ -23,7 +24,7 @@ const Form = (props) => {
         <FormContext.Provider value={{
             values, changeHandler, errors
         }}>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className={className}>
                 {children}
             </form>
         </FormContext.Provider>
