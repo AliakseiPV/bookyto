@@ -16,9 +16,6 @@ const Input = ({
 }) => {
     return (
         <>
-            <label htmlFor={htmlFor}>
-                {labelText}
-            </label>
             <input 
                 value={valueInput}
                 name={nameInput} 

@@ -27,49 +27,56 @@ const SignUp = () => {
                     labelText='First Name'
                     nameInput='firstName'
                     typeInput='firstName'
-                    className={'Input'}
+                    classNameInput={'Input'}
+                    classNameLabel={'Label center__left'}
                 />
                 <FormItem
                     htmlFor='lastName'
                     labelText='Last Name'
                     nameInput='lastName'
                     typeInput='lastName'
-                    className={'Input'}
+                    classNameInput={'Input'}
+                    classNameLabel={'Label'}
                 />
                 <FormItem
                     htmlFor='email'
                     labelText='Email'
                     nameInput='email'
                     typeInput='email'
-                    className={'Input'}
+                    classNameInput={'Input'}
+                    classNameLabel={'Label'}
                 />
                 <FormItem
                     htmlFor='password'
                     labelText='Password'
                     nameInput='password'
                     typeInput='password'
-                    className={'Input'}
+                    classNameInput={'Input'}
+                    classNameLabel={'Label'}
                 />
                 <FormItem
                     htmlFor='password_confirmation'
                     labelText='Confirm password'
                     nameInput='repeatPassword'
                     typeInput='password'
-                    className={'Input'}
+                    classNameInput={'Input'}
+                    classNameLabel={'Label'}
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Buyer'
                     nameInput='user_role'
                     typeInput='radio'
-                    className={'Input'}
+                    classNameInput={'Input'}
+                    classNameLabel={'Label'}
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Seller'
                     nameInput='user_role'
                     typeInput='radio'
-                    className={'Input'}
+                    classNameInput={'Input'}
+                    classNameLabel={'Label'}
                 />
                 <Button
                     className={"Button button__large"}

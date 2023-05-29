@@ -1,5 +1,10 @@
 @import-normalize;
-body, html {
+@font-face {
+    font-family: 'Playfair', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
+}
+
+* {
     margin: 0;
     padding: 0;
 

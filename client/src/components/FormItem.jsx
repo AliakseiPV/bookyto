@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import {Input, Error} from "../ui-kit"
+import {Input, Error, Label} from "../ui-kit"
 import { FormContext } from "./Form/Form"
 import '../pages/Styles/SignUp.scss'
 
@@ -9,7 +9,8 @@ const FormItem = ({
     nameInput,
     typeInput,
     requiredBool,
-    className
+    classNameInput,
+    classNameLabel
     }) => {
 
     const formContext = useContext(FormContext)
@@ -19,9 +20,7 @@ const FormItem = ({
     
     return (
         <>
-            <Input 
-                htmlFor={htmlFor} 
-                labelText= {labelText}
+            <Input
                 valueInput={values[nameInput]}
                 typeInput={typeInput}
                 nameInput={nameInput}
@@ -29,7 +28,12 @@ const FormItem = ({
                 onChange={changeHandler}
                 onFocusInput={() => setOnFocus(true)}
                 onBlurInput={() => setOnFocus(false)}
-                className={className}
+                className={classNameInput}
+            />
+            <Label
+                htmlFor={htmlFor}
+                labelText={labelText}
+                className={classNameLabel}
             />
             {(errors[nameInput]?.length && onFocus)
                 ? 
