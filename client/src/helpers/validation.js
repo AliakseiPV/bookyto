@@ -11,8 +11,8 @@ export const signUpValidation = (
         setErrors({...errors, [inputName]: validation(inputName, currentInputValue, formValues, errorFilter)})
     }
     if (inputName === 'password') {
-        setErrors({...errors, [inputName]: validation(inputName, currentInputValue, formValues, errorFilter)})
-        setErrors({...errors, 'repeatPassword': validation('repeatPassword', currentInputValue, formValues, errorFilter)})
+        setErrors(prevItem => ({...prevItem, [inputName]: validation(inputName, currentInputValue, formValues, errorFilter)}))
+        setErrors(prevItem => ({...prevItem, 'repeatPassword': validation('repeatPassword', currentInputValue, formValues, errorFilter)}))
     }
     if (inputName === 'repeatPassword') {
         setErrors({...errors, [inputName]: validation(inputName, currentInputValue, formValues, errorFilter)})
