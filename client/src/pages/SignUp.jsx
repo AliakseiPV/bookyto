@@ -7,8 +7,10 @@ import {errorChecks} from '../helpers/errors'
 import {Button} from '../ui-kit'
 import {signUpValues} from '../helpers/initialValues'
 import '../pages/Styles/SignUp.scss'
+import { validation } from '../helpers/validation'
 
 const SignUp = () => {
+
     function handleSubmit (e) {
         e.preventDefault();
     }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {validation} from '../../helpers/validation'
+import {validation, signUpValidation} from '../../helpers/validation'
 import './Form.scss'
 
 export const FormContext = React.createContext({
@@ -17,7 +17,8 @@ const Form = (props) => {
         const newValues = {...values, [name]: value}
 
         setValues(newValues)
-        setErrors({...errors, [name]: validation(name, value, newValues, validationParams)}) 
+        signUpValidation(newValues, name, value, errors, setErrors, validationParams)
+        // setErrors({...errors, [name]: validation(name, value, newValues, validationParams)}) 
     }
 
     return (
