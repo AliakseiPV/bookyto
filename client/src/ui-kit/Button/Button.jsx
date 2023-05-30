@@ -4,7 +4,7 @@ import "./Button.scss"
 function Button({buttonType, isDisabled, buttonText, onClickHandler, className}) {
     return (
         <button
-            className={className}
+            className={`Button ${className}`}
             type={buttonType}
             disabled={isDisabled}
             onClick={onClickHandler}

@@ -12,7 +12,7 @@ const Form = (props) => {
     const [errors, setErrors] = useState({})
     const [values, setValues] = useState(initialValues)
 
-    const changeHandler = async (event) => {
+    const setValuesHandler = (event) => {
         const {name, value} = event.target;
         const newValues = {...values, [name]: value}
 
@@ -22,7 +22,7 @@ const Form = (props) => {
 
     return (
         <FormContext.Provider value={{
-            values, changeHandler, errors
+            values, setValuesHandler, errors
         }}>
             <form onSubmit={onSubmit} className={className}>
                 {children}

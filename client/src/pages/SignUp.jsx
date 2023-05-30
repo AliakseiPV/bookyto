@@ -6,6 +6,7 @@ import Form from '../components/Form/Form'
 import {errorChecks} from '../helpers/errors'
 import {Button} from '../ui-kit'
 import {signUpValues} from '../helpers/initialValues'
+import '../pages/Styles/SignUp.scss'
 
 const SignUp = () => {
     function handleSubmit (e) {
@@ -26,60 +27,60 @@ const SignUp = () => {
                     htmlFor='firstName'
                     labelText='First Name'
                     nameInput='firstName'
-                    typeInput='firstName'
-                    classNameInput={'Input'}
-                    classNameLabel={'Label center__left'}
+                    typeInput='text'
+                    classNameInput='bottom__border'
+                    classNameLabel='shift__up'
                 />
                 <FormItem
                     htmlFor='lastName'
                     labelText='Last Name'
                     nameInput='lastName'
-                    typeInput='lastName'
-                    classNameInput={'Input'}
-                    classNameLabel={'Label'}
+                    typeInput='text'
+                    classNameInput='bottom__border'
+                    classNameLabel='shift__up'
                 />
                 <FormItem
                     htmlFor='email'
                     labelText='Email'
                     nameInput='email'
-                    typeInput='email'
-                    classNameInput={'Input'}
-                    classNameLabel={'Label'}
+                    typeInput='text'
+                    classNameInput='bottom__border'
+                    classNameLabel='shift__up'
                 />
                 <FormItem
                     htmlFor='password'
                     labelText='Password'
                     nameInput='password'
                     typeInput='password'
-                    classNameInput={'Input'}
-                    classNameLabel={'Label'}
+                    classNameInput='bottom__border'
+                    classNameLabel='shift__up'
                 />
                 <FormItem
                     htmlFor='password_confirmation'
                     labelText='Confirm password'
                     nameInput='repeatPassword'
                     typeInput='password'
-                    classNameInput={'Input'}
-                    classNameLabel={'Label'}
+                    classNameInput='bottom__border'
+                    classNameLabel='shift__up'
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Buyer'
                     nameInput='user_role'
                     typeInput='radio'
-                    classNameInput={'Input'}
-                    classNameLabel={'Label'}
+                    classNameInput='bottom__border'
+                    classNameLabel=''
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Seller'
                     nameInput='user_role'
                     typeInput='radio'
-                    classNameInput={'Input'}
-                    classNameLabel={'Label'}
+                    classNameInput=''
+                    classNameLabel=''
                 />
                 <Button
-                    className={"Button button__large"}
+                    className="button__large color__blue"
                     buttonType='submit'
                     buttonText='Sign Up'
                 />

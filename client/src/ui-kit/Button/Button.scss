@@ -3,7 +3,6 @@
   border: none;
   font: inherit;
   color: inherit;
-  background-color: cornflowerblue;
   cursor: pointer;
   border-radius: 15px;
   &.button__medium {
@@ -15,6 +14,9 @@
     padding: 10px;
     margin: 5px;
     width: 65%;
+  }
+  &.color__blue {
+    background-color: #014466;
   }
 }
 

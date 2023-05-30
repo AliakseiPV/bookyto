@@ -1,5 +1,6 @@
 .SignUp__Wrapper {
-  font-family: 'Playfair', serif;
+  color: #fcfcfb;
+  font-family: 'Raleway', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,28 +8,33 @@
   width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../../static/layer-base.png");
+  background-image: url("../../static/back.jpg");
 }
 .SignUp__Form {
-  color: #fdfbd9;
+  color: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: solid 1px #fdfbd9;
+  border: solid 1px white;
   border-radius: 10px;
   width: 27%;
   padding: 10px;
   background: transparent;
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  font-weight: 200;
+  font-stretch: condensed;
   h1 {
     padding: 20px;
+    text-shadow: #c9c8b7 1px 0 10px;
+    font-weight: 900;
   }
 }
 .SignUp__Link {
   padding: 10px;
 }
-
-input:focus + label{
+input:focus + .shift__up,
+input:valid + .shift__up {
   transform: translateY(-60px);
 }

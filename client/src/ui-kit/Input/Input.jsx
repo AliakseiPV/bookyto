@@ -2,8 +2,6 @@ import React from 'react';
 import './Input.scss'
 
 const Input = ({
-                       htmlFor,
-                       labelText,
                        nameInput,
                        typeInput,
                        valueInput,
@@ -25,7 +23,7 @@ const Input = ({
                 onChange={onChange}
                 onFocus={onFocusInput}
                 onBlur={onBlurInput}
-                className={className}
+                className={`Input ${className}`}
             />
         </>
     );
