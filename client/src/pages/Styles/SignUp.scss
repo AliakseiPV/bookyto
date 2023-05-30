@@ -38,3 +38,7 @@ input:focus + .shift__up,
 input:valid + .shift__up {
   transform: translateY(-60px);
 }
+
+input:focus + .ErrorList {
+  
+}

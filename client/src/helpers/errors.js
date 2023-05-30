@@ -1,5 +1,3 @@
-import {validation} from "./validation";
-
 const emailErrors = [
     {
         filter: /^\s*\S+.*/,

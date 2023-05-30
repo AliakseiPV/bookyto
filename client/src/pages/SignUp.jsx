@@ -1,8 +1,8 @@
-import React, {useContext, useEffect} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import FormItem from '../components/FormItem'
 import {LOGIN_ROUTE} from '../utils/consts'
-import Form, {FormContext} from '../components/Form/Form'
+import Form from '../components/Form/Form'
 import {errorChecks} from '../helpers/errors'
 import {Button} from '../ui-kit'
 import {signUpValues} from '../helpers/initialValues'
@@ -47,6 +47,7 @@ const SignUp = () => {
                     typeInput='text'
                     classNameInput='bottom__border'
                     classNameLabel='shift__up'
+                    classNameError='ErrorList'
                 />
                 <FormItem
                     htmlFor='password'
@@ -55,6 +56,7 @@ const SignUp = () => {
                     typeInput='password'
                     classNameInput='bottom__border'
                     classNameLabel='shift__up'
+                    classNameError='ErrorList'
                 />
                 <FormItem
                     htmlFor='password_confirmation'
@@ -63,6 +65,7 @@ const SignUp = () => {
                     typeInput='password'
                     classNameInput='bottom__border'
                     classNameLabel='shift__up'
+                    classNameError='ErrorList'
                 />
                 <FormItem
                     htmlFor='default_radio'

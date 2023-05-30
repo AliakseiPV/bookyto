@@ -11,7 +11,8 @@ const FormItem = ({
     typeInput,
     requiredBool,
     classNameInput,
-    classNameLabel
+    classNameLabel,
+    classNameError
     }) => {
 
     const formContext = useContext(FormContext)
@@ -24,7 +25,8 @@ const FormItem = ({
     },[values])
     
     return (
-        <>
+        <div className="form__item"> 
+            <div className="form__item__input"> 
             <Input
                 valueInput={values[nameInput]}
                 typeInput={typeInput}
@@ -40,13 +42,16 @@ const FormItem = ({
                 labelText={labelText}
                 className={classNameLabel}
             />
+            </div>
+            <div className="form__item__error">
             {(errors[nameInput]?.length && onFocus)
                 ? 
-                <Error errors={errors[nameInput]}/>
+                <Error errors={errors[nameInput]} className={classNameError}/>
                 : 
                 <></>
             }
-        </>
+            </div>
+        </div>
     );
 };
 
