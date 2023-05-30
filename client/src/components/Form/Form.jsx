@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import {validation, signUpValidation} from '../../helpers/validation'
 import './Form.scss'
 
 export const FormContext = React.createContext({
@@ -14,16 +13,12 @@ const Form = (props) => {
 
     const setValuesHandler = (event) => {
         const {name, value} = event.target;
-        const newValues = {...values, [name]: value}
-
-        setValues(newValues)
-        signUpValidation(newValues, name, value, errors, setErrors, validationParams)
-        // setErrors({...errors, [name]: validation(name, value, newValues, validationParams)}) 
+        setValues({...values, [name]: value})
     }
 
     return (
         <FormContext.Provider value={{
-            values, setValuesHandler, errors
+            values, setValuesHandler, errors, setErrors, validationParams
         }}>
             <form onSubmit={onSubmit} className={className}>
                 {children}

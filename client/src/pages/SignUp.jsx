@@ -1,13 +1,12 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import FormItem from '../components/FormItem'
 import {LOGIN_ROUTE} from '../utils/consts'
-import Form from '../components/Form/Form'
+import Form, {FormContext} from '../components/Form/Form'
 import {errorChecks} from '../helpers/errors'
 import {Button} from '../ui-kit'
 import {signUpValues} from '../helpers/initialValues'
 import '../pages/Styles/SignUp.scss'
-import { validation } from '../helpers/validation'
 
 const SignUp = () => {
 

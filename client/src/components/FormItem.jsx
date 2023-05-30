@@ -1,7 +1,8 @@
-import { useContext, useState } from "react"
+import {useContext, useEffect, useState} from "react"
 import {Input, Error, Label} from "../ui-kit"
 import { FormContext } from "./Form/Form"
 import '../pages/Styles/FormItem.scss'
+import {validation} from "../helpers/validation";
 
 const FormItem = ({
     htmlFor,
@@ -14,9 +15,13 @@ const FormItem = ({
     }) => {
 
     const formContext = useContext(FormContext)
-    const {values, setValuesHandler, errors} = formContext
+    const {values, setValuesHandler, errors, setErrors, validationParams} = formContext
 
     const [onFocus, setOnFocus] = useState(false);
+
+    useEffect(()=> {
+        setErrors(prev => ({...prev, [nameInput]: validation(nameInput, values[nameInput], values, validationParams)}))
+    },[values])
     
     return (
         <>

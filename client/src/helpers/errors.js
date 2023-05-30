@@ -1,3 +1,5 @@
+import {validation} from "./validation";
+
 const emailErrors = [
     {
         filter: /^\s*\S+.*/,
@@ -38,8 +40,8 @@ const passwordErrors = [
         filter: /.{8,32}/,
         error: "Password has to be between 8 to 32 characters long"
     }
-]
 
+]
 const repeatPasswordErrors = [
     {
         filter: /^\s*\S+.*/,
