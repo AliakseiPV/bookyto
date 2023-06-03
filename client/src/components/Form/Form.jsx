@@ -20,7 +20,7 @@ const Form = (props) => {
         <FormContext.Provider value={{
             values, setValuesHandler, errors, setErrors, validationParams
         }}>
-            <form onSubmit={onSubmit} className={className}>
+            <form onSubmit={onSubmit} className={`Form_default ${className}`}>
                 {children}
             </form>
         </FormContext.Provider>

@@ -22,7 +22,7 @@ const SignUp = () => {
                 onSubmit={handleSubmit}
                 validationParams={errorChecks}
                 initialValues={signUpValues}
-                className={'Form_default center'}
+                className={'center'}
             >
                 <FormItem
                     htmlFor='firstName'
