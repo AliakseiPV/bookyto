@@ -1,8 +1,8 @@
 import {useContext, useEffect, useState} from "react"
-import {Input, Error, Label} from "../ui-kit"
-import { FormContext } from "./Form/Form"
-import '../pages/Styles/FormItem.scss'
-import {validation} from "../helpers/validation";
+import {Input, Error, Label} from "../../ui-kit"
+import { FormContext } from "../Form/Form"
+import '../FormItem/FormItem.scss'
+import {validation} from "../../helpers/validation";
 
 const FormItem = ({
     htmlFor,

@@ -18,8 +18,8 @@
   justify-content: center;
   border: solid 1px white;
   border-radius: 10px;
-  width: 27%;
-  padding: 10px;
+  width: 400px;
+  height: 600px;
   background: transparent;
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
@@ -32,6 +32,9 @@
   }
 } 
 .SignUp__Link {
+  display: flex;
+  width: 260px;
+  justify-content: space-between;
   padding: 10px;
 }
 input:focus + .shift__up,
