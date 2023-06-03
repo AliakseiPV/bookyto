@@ -1,7 +1,6 @@
 @import "../../utils/colors.scss";
 .SignUp__Wrapper {
   color: $desert-storm;
-  font-family: 'Raleway', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,8 +27,13 @@
   font-stretch: condensed;
   h1 {
     padding: 20px;
-    text-shadow: #c9c8b7 1px 0 10px;
+    text-shadow: $foggy-gray 1px 0 10px;
     font-weight: 900;
+  }
+  a {
+    text-decoration: none;
+    color: $jaffa;
+    font-weight: bold;
   }
 } 
 .SignUp__Link {
@@ -42,11 +46,7 @@ input:focus + .shift__up,
 input:valid + .shift__up {
   transform: translateY(-30px);
 }
-a {
-  text-decoration: none;
-  color: $jaffa;
-  font-weight: bold;
-}
+
 
 
 

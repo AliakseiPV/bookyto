@@ -1,9 +1,8 @@
 @import "../../utils/colors.scss";
 .Button {
-  padding: 0;
   border: none;
-  font: inherit;
-  color: inherit;
+  font-size: medium;
+  color: $desert-storm;
   cursor: pointer;
   border-radius: 15px;
   &.button__medium {

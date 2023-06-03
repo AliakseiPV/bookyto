@@ -1,16 +1,7 @@
-@import-normalize;
-@font-face {
-    
-    
-}
-
+@import "@fontsource/raleway";
 * {
     margin: 0;
     padding: 0;
-}
-
-*,
-*:before,
-*:after {
+    font-family: "Raleway", serif;
     box-sizing: border-box;
 }
