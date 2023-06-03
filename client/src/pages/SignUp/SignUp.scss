@@ -1,5 +1,6 @@
+@import "../../utils/colors.scss";
 .SignUp__Wrapper {
-  color: #fcfcfb;
+  color: $desert-storm;
   font-family: 'Raleway', sans-serif;
   display: flex;
   align-items: center;
@@ -16,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: solid 1px white;
+  border: solid 1px $desert-storm;
   border-radius: 10px;
   width: 400px;
   height: 600px;
@@ -41,10 +42,11 @@ input:focus + .shift__up,
 input:valid + .shift__up {
   transform: translateY(-30px);
 }
-
-*:before,
-*:after {
-  box-sizing: border-box;
+a {
+  text-decoration: none;
+  color: $jaffa;
+  font-weight: bold;
 }
+
 
 

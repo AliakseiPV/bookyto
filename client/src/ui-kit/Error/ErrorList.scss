@@ -1,7 +1,8 @@
+@import "../../utils/colors.scss";
 .ErrorList {
     display: flex;
     align-items: center;
-    background-color: #0A6570;
+    background-color: $atol;
     list-style-type: circle;
     list-style-position: inside;
     width: 300px;
@@ -18,7 +19,7 @@
             left: -13px;
             top: 8px;
             border-top: 13px solid transparent;
-            border-right: 15px solid #0A6570;
+            border-right: 15px solid $atol;
             border-left: none;
             border-bottom: 13px solid transparent;
         }

@@ -84,7 +84,7 @@ const SignUp = () => {
                     classNameLabel='radio__label'
                 />
                 <Button
-                    className="button__large color__blue"
+                    className="button__large color__blue ripple"
                     buttonType='submit'
                     buttonText='Sign Up'
                 />

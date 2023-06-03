@@ -1,39 +1,43 @@
+@import "../../utils/colors.scss";
 .Input {
   width: 78%;
   border: none;
   outline: none;
   background: transparent;
   margin: 10px 0;
-  color: #fcfcfb;
+  color:$desert-storm;
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
   &.bottom__border {
-    border-bottom: solid 2px #fcfcfb;
+    border-bottom: solid 2px $desert-storm;
   }
   &.radio {
-    display: flex;
-    align-items: center;
     -webkit-appearance: none;
     appearance: none;
-    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $desert-storm;
     margin: 0;
-    color: blue;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid blue;
+    width: 1.2em;
+    height: 1.2em;
+    border: 0.15em solid $jaffa;
     border-radius: 50%;
-    //transform: translateX(-9em) translateY(-1em);
-    :before {
-      content: '';
-      width: 0.65em;
-      height: 0.65em;
+    &:before {
+      content: "";
+      width: 0.7em;
+      height: 0.7em;
       border-radius: 50%;
       transform: scale(0);
       transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em purple;
-      :checked::before {
-        transform: scale(1);
-      }
+      box-shadow: inset 1em 1em $elm;
+    }
+    &:checked::before {
+      transform: scale(1);
+    }
+    &:focus {
+      outline: max(2px, 0.15em) solid $elm;
+      outline-offset: max(2px, 0.15em);
     }
   }
 }
