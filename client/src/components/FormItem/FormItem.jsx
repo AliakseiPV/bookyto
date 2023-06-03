@@ -44,12 +44,12 @@ const FormItem = ({
             />
             </div>
             <div className="form__item__error">
-            {(errors[nameInput]?.length && onFocus)
-                ? 
-                <Error errors={errors[nameInput]} className={classNameError}/>
-                : 
-                <></>
-            }
+                    {(errors[nameInput]?.length && onFocus)
+                        ?
+                        <Error errors={errors[nameInput]} className={classNameError}/>
+                        :
+                        <></>
+                    }
             </div>
         </div>
     );

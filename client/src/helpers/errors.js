@@ -1,7 +1,7 @@
 const emailErrors = [
     {
         filter: /^\s*\S+.*/,
-        error: "Email field is empty"
+        error: "Field is empty"
     },
     {
         filter: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
@@ -12,23 +12,23 @@ const emailErrors = [
 const passwordErrors = [
     {
         filter: /^\s*\S+.*/,
-        error: "Password field is empty"
+        error: "Field is empty"
     },
     {
         filter: /^(?=[^a-z]*[a-z])/,
-        error: "Password must include at least one lower case"
+        error: "Password must include one lower case"
     },
     {
         filter: /^(?=[^A-Z]*[A-Z])/,
-        error: "Password must include at least one upper case"
+        error: "Password must include one upper case"
     },
     {
         filter: /^(?=\D*\d)/,
-        error: "Password must include at least one number"
+        error: "Password must include one number"
     },
     {
         filter: /^(?=[^!#%]*[!#%])/,
-        error: "Password must include at one special character (only !#% are allowed)"
+        error: "Password must include !#%"
     },
     {
         filter: /^([A-Za-z0-9!#%])(?!.* )/,
@@ -36,14 +36,14 @@ const passwordErrors = [
     },
     {
         filter: /.{8,32}/,
-        error: "Password has to be between 8 to 32 characters long"
+        error: "Password has to be between 8-32 in length"
     }
 
 ]
 const repeatPasswordErrors = [
     {
         filter: /^\s*\S+.*/,
-        error: "Password field is empty"
+        error: "Field is empty"
     },
     {
         filter: (values) => {
