@@ -1,4 +1,6 @@
 .ErrorList {
+    display: flex;
+    align-items: center;
     background-color: #0A6570;
     list-style-type: circle;
     list-style-position: inside;
@@ -13,12 +15,12 @@
     &.arrow__left:after {
             content: " ";
             position: absolute;
-            left: -14px;
+            left: -13px;
             top: 8px;
-            border-top: 15px solid transparent;
+            border-top: 13px solid transparent;
             border-right: 15px solid #0A6570;
             border-left: none;
-            border-bottom: 15px solid transparent;
+            border-bottom: 13px solid transparent;
         }
     li {
       padding: 2px;

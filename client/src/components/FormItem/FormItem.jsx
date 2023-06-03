@@ -27,21 +27,21 @@ const FormItem = ({
     return (
         <div className="form__item"> 
             <div className="form__item__input"> 
-            <Input
-                valueInput={values[nameInput]}
-                typeInput={typeInput}
-                nameInput={nameInput}
-                requiredBool={requiredBool}
-                onChange={setValuesHandler}
-                onFocusInput={() => setOnFocus(true)}
-                onBlurInput={() => setOnFocus(false)}
-                className={classNameInput}
-            />
-            <Label
-                htmlFor={htmlFor}
-                labelText={labelText}
-                className={classNameLabel}
-            />
+                <Input
+                    valueInput={values[nameInput]}
+                    typeInput={typeInput}
+                    nameInput={nameInput}
+                    requiredBool={requiredBool}
+                    onChange={setValuesHandler}
+                    onFocusInput={() => setOnFocus(true)}
+                    onBlurInput={() => setOnFocus(false)}
+                    className={classNameInput}
+                />
+                <Label
+                    htmlFor={htmlFor}
+                    labelText={labelText}
+                    className={classNameLabel}
+                />
             </div>
             <div className="form__item__error">
                     {(errors[nameInput]?.length && onFocus)

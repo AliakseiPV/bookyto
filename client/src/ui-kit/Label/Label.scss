@@ -1,11 +1,19 @@
+
 .Label {
+  position: absolute;
   width: 79%;
   pointer-events: none;
   font-size: 1.1em;
   &.shift__up {
-    left: 0;
+    left: 39px;
+    top: 20px;
     padding-left: 5px;
     transition: all 0.3s ease-in;
-    transform: translateY(-30px);
+  }
+  &.radio__label {
+    position: absolute;
   }
 }
+
+
+

@@ -47,7 +47,7 @@ const SignUp = () => {
                     typeInput='text'
                     classNameInput='bottom__border'
                     classNameLabel='shift__up'
-                    classNameError='ErrorList'
+                    classNameError='arrow__left'
                 />
                 <FormItem
                     htmlFor='password'
@@ -56,7 +56,7 @@ const SignUp = () => {
                     typeInput='password'
                     classNameInput='bottom__border'
                     classNameLabel='shift__up'
-                    classNameError='ErrorList'
+                    classNameError='arrow__left'
                 />
                 <FormItem
                     htmlFor='password_confirmation'
@@ -65,23 +65,23 @@ const SignUp = () => {
                     typeInput='password'
                     classNameInput='bottom__border'
                     classNameLabel='shift__up'
-                    classNameError='ErrorList'
+                    classNameError='arrow__left'
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Buyer'
                     nameInput='user_role'
                     typeInput='radio'
-                    classNameInput='bottom__border'
-                    classNameLabel=''
+                    classNameInput='radio'
+                    classNameLabel='radio__label'
                 />
                 <FormItem
                     htmlFor='default_radio'
                     labelText='Seller'
                     nameInput='user_role'
                     typeInput='radio'
-                    classNameInput=''
-                    classNameLabel=''
+                    classNameInput='radio'
+                    classNameLabel='radio__label'
                 />
                 <Button
                     className="button__large color__blue"

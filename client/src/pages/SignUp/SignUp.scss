@@ -39,9 +39,12 @@
 }
 input:focus + .shift__up,
 input:valid + .shift__up {
-  transform: translateY(-60px);
+  transform: translateY(-30px);
 }
 
-input:focus + .ErrorList {
-  
+*:before,
+*:after {
+  box-sizing: border-box;
 }
+
+
