@@ -1,10 +1,12 @@
 import React from 'react';
 import "./Button.scss"
+import classnames from 'classnames';
+
 
 function Button({buttonType, isDisabled, buttonText, onClickHandler, className}) {
     return (
         <button
-            className={`Button ${className}`}
+            className={classnames('Button', className)}
             type={buttonType}
             disabled={isDisabled}
             onClick={onClickHandler}

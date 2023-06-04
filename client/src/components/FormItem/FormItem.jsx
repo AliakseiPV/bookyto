@@ -48,7 +48,7 @@ const FormItem = ({
                         ?
                         <Error errors={errors[nameInput]} className={classNameError}/>
                         :
-                        <></>
+                        null
                     }
             </div>
         </div>

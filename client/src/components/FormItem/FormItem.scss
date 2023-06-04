@@ -5,21 +5,19 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-}
-
-.form__item__input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 10px 0;
-}
-
-.form__item__error {
-    position: absolute;
-    top: -5px;
-    left: 97%;
+    &__input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+    &__error {
+        position: absolute;
+        top: -5px;
+        left: 97%;
+    }
 }
 
 

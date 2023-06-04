@@ -1,5 +1,6 @@
 import React from 'react';
 import './Input.scss'
+import classnames from 'classnames';
 
 const Input = ({
                        nameInput,
@@ -23,7 +24,7 @@ const Input = ({
                 onChange={onChange}
                 onFocus={onFocusInput}
                 onBlur={onBlurInput}
-                className={`Input ${className}`}
+                className={classnames('Input', className)}
             />
         </>
     );

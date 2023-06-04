@@ -1,47 +1,51 @@
 @import "../../utils/colors.scss";
-.SignUp__Wrapper {
-  color: $desert-storm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("../../static/back.jpg");
-}
-.SignUp__Form {
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: solid 1px $desert-storm;
-  border-radius: 10px;
-  width: 400px;
-  height: 600px;
-  background: transparent;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  font-weight: 200;
-  font-stretch: condensed;
-  h1 {
-    padding: 20px;
-    text-shadow: $foggy-gray 1px 0 10px;
-    font-weight: 900;
+
+.SignUp {
+  &__Wrapper {
+    color: $desert-storm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../static/back.jpg");
   }
-  a {
-    text-decoration: none;
-    color: $jaffa;
-    font-weight: bold;
+  &__Form {
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px $desert-storm;
+    border-radius: 10px;
+    width: 400px;
+    height: 600px;
+    background: transparent;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    font-weight: 200;
+    font-stretch: condensed;
+    h1 {
+      padding: 20px;
+      text-shadow: $foggy-gray 1px 0 10px;
+      font-weight: 900;
+    }
+    a {
+      text-decoration: none;
+      color: $jaffa;
+      font-weight: bold;
+    }
   }
-} 
-.SignUp__Link {
-  display: flex;
-  width: 260px;
-  justify-content: space-between;
-  padding: 10px;
+  &__Link {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+    padding: 10px;
+  }
 }
+
 input:focus + .shift__up,
 input:valid + .shift__up {
   transform: translateY(-30px);
