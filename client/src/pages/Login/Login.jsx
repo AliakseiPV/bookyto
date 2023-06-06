@@ -14,7 +14,7 @@ const Login = () => {
     }
 
     function handleSubmit (e) {
-        e.preventDefault();
+        e.preventDefault(); 
     }
     return (
         <div className='Login__Wrapper'>
@@ -50,7 +50,7 @@ const Login = () => {
                     buttonText='Login'
                 />
                 </Form>
-                <div className='SignUp__Link'>
+                <div className='Login__Link'>
                 Don't have an account?
                 <span>
                     <Link to={REGISTRATION_ROUTE}>
