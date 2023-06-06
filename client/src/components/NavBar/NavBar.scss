@@ -1,0 +1,43 @@
+@import "../../utils/colors.scss";
+.Nav__Bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: $jaffa ;
+  color: $desert-storm;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  &__Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 2em;
+    }
+    li {
+      display: flex;
+      align-items: center;
+    }
+    h1 {
+      margin-left: 30px;
+    }
+  }
+  &__Link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    .Icon {
+      color: $swamp;
+      margin-left: 5px;
+    }
+  }
+  &__Profile {
+  }
+}

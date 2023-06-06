@@ -1,16 +1,13 @@
 import BookPage from './pages/BookPage'
 import Login from './pages/Login'
 import {SignUp} from './pages/SignUp'
+import {About} from './pages/About'
 import StorePage from './pages/StorePage'
-import {REGISTRATION_ROUTE, LOGIN_ROUTE, STORE_ROUTE, BOOK_ROUTE, SETTINGS_ROUTE, FAVOURITES_ROUTE, BASKET_ROUTE, SELLER_ROUTE, DASHBOARD_ROUTE, PRODUCT_ROUTE} from './utils/consts'
+import {REGISTRATION_ROUTE, LOGIN_ROUTE, STORE_ROUTE, BOOK_ROUTE, SETTINGS_ROUTE, ABOUT_ROUTE, BASKET_ROUTE, SELLER_ROUTE, DASHBOARD_ROUTE, PRODUCT_ROUTE} from './utils/consts'
 
 export const BuyerAuthRoutes = [
     {
         path: SETTINGS_ROUTE,
-        Component: ''
-    },
-    {
-        path: FAVOURITES_ROUTE,
         Component: ''
     },
     {
@@ -57,4 +54,8 @@ export const PublicRoutes = [
         path: BOOK_ROUTE + '/:id',
         Component: BookPage
     },
+    {
+        path: ABOUT_ROUTE,
+        Component: About
+    }
 ]
