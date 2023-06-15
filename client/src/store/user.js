@@ -1,4 +1,4 @@
 export const user = {
-    isAuth: false,
+    isAuth: true,
     userInfo: {}
 }
