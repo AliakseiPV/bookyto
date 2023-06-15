@@ -4,6 +4,7 @@ import {SignUp} from './pages/SignUp'
 import {About} from './pages/About'
 import StorePage from './pages/StorePage'
 import {REGISTRATION_ROUTE, LOGIN_ROUTE, STORE_ROUTE, BOOK_ROUTE, SETTINGS_ROUTE, ABOUT_ROUTE, BASKET_ROUTE, SELLER_ROUTE, DASHBOARD_ROUTE, PRODUCT_ROUTE} from './utils/consts'
+import { Basket } from './pages/Basket'
 
 export const BuyerAuthRoutes = [
     {
@@ -12,7 +13,7 @@ export const BuyerAuthRoutes = [
     },
     {
         path: BASKET_ROUTE,
-        Component: ''
+        Component: Basket
     }
 ]
 

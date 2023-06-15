@@ -1,11 +1,11 @@
 import React from 'react';
 
-function About(props) {
+const Basket = () => {
     return (
         <div>
-            About
+            Basket
         </div>
     );
-}
+};
 
-export default About;
+export default Basket;

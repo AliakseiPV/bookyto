@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {Context} from '../../index'
 import "./NavBar.scss"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {REGISTRATION_ROUTE, LOGIN_ROUTE, DASHBOARD_ROUTE, STORE_ROUTE, BASKET_ROUTE, ABOUT_ROUTE} from "../../utils/consts";
 import {Link, useNavigate} from 'react-router-dom'
 
 function NavBar() {
+    const {user} = useContext(Context)
     const navigate = useNavigate();
 
     return (
@@ -26,15 +28,19 @@ function NavBar() {
                     >
                         About
                     </Link>
-                    <li>
-                        <Link to={BASKET_ROUTE}
-                              onClick={() => navigate(BASKET_ROUTE)}
-                              className="Nav__Bar__Link"
-                        >
-                              Basket
-                            <ShoppingCartIcon className="Icon"/>
-                        </Link>
-                    </li>
+                    { user.isAuth ? 
+                        <li>
+                            <Link to={BASKET_ROUTE}
+                                onClick={() => navigate(BASKET_ROUTE)}
+                                className="Nav__Bar__Link"
+                            >
+                                Basket
+                                <ShoppingCartIcon className="Icon"/>
+                            </Link>
+                        </li>
+                        :
+                        <></>
+                    }
                 </ul>
             </div>
            <div className="Nav__Bar__Profile">
