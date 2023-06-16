@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import FormItem from '../../components/FormItem/FormItem'
 import {REGISTRATION_ROUTE} from '../../utils/consts'
@@ -6,16 +6,31 @@ import Form from '../../components/Form/Form'
 import {Button} from '../../ui-kit'
 import {errorChecks} from '../../helpers/errors'
 import './Login.scss'
+import {Context} from '../../index'
+import data from "../../TestData/user.json"
 
 const Login = () => {
+    const {user} = useContext(Context)
+
     const loginInitialVals = {
         email: "",
         password: ""
     }
 
+    function checkData (e, loginData) {
+        console.log(loginData.password === e.target.password.value)
+        if((loginData.email === e.target.email.value) && (loginData.password === e.target.password.value)) {
+            user.isAuth = true; 
+            user.userInfo = loginData.role
+        }
+    }
+
     function handleSubmit (e) {
         e.preventDefault(); 
+        checkData(e, data)
+        console.log(user)
     }
+
     return (
         <div className='Login__Wrapper'>
             <div className='Login__Form'>
