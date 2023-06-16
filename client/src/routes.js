@@ -1,5 +1,5 @@
 import BookPage from './pages/BookPage'
-import Login from './pages/Login'
+import {Login} from './pages/Login'
 import {SignUp} from './pages/SignUp'
 import {About} from './pages/About'
 import StorePage from './pages/StorePage'
