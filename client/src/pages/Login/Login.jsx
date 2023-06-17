@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import FormItem from '../../components/FormItem/FormItem'
-import {REGISTRATION_ROUTE} from '../../utils/consts'
+import {REGISTRATION_ROUTE, STORE_ROUTE} from '../../utils/consts'
 import Form from '../../components/Form/Form'
 import {Button} from '../../ui-kit'
 import {errorChecks} from '../../helpers/errors'
@@ -12,6 +12,7 @@ import {useDispatch, useSelector} from "react-redux";
 const Login = () => {
     const dispatch = useDispatch();
 	const user = useSelector(state => state.user)
+	const navigate = useNavigate();
 
 	const trueAuth = (user) => {
 		dispatch({type:"AUTH_TRUE", payload: user})
@@ -37,7 +38,7 @@ const Login = () => {
     function handleSubmit (e) {
         e.preventDefault(); 
         checkData(e, data)
-        console.log(user)
+       	navigate(STORE_ROUTE)
     }
 
     return (

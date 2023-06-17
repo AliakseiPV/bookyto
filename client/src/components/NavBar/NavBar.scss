@@ -9,52 +9,60 @@
   position: fixed;
   top: 0;
   width: 100%;
-  &__Container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-    ul {
-      display: flex;
-      list-style: none;
-      gap: 2em;
-    }
-    li {
-      display: flex;
-      align-items: center;
-    }
-    h1 {
-      margin-left: 30px;
-    }
-  }
-  &__Link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &__Logo {
+    margin-left: 30px;
     text-decoration: none;
-    color: inherit;
-    .Icon {
-      color: $swamp;
-      margin-left: 5px;
-    }
+    color: $desert-storm;
+    font-size: 32px;
   }
-  &__Profile {
+  &__Icon__Wrapper {
+    transform: translateY(2px);
+  }
+  &__Nav {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
     ul {
       display: flex;
       justify-content: center;
-      gap: 25px;
+      gap: 10px;
     }
     li {
       cursor: pointer;
       display: flex;
-      justify-content: center;
       align-items: center;
+    }
+    .Icon {
+      width: 26px;
+      height: 26px;
+      color: $desert-storm;
     }
     .profile_img {
       background: black;
       border-radius: 50%;
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.Drop__Icon__Menu{
+  display: inline-block;
+  position: relative;
+  &:hover {
+    .Drop__Menu {
+      display: block;
+      transform: translateX(-110px) translateY(95px);
+      height: 150px;
+    }
+    .arrow__top:after {
+      content: " ";
+      position: absolute;
+      top: 23px;
+      border-top: none;
+      border-right: 15px solid transparent;
+      border-left: 15px solid transparent;
+      border-bottom: 13px solid white;
     }
   }
 }
