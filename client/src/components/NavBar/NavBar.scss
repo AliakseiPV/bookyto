@@ -39,5 +39,22 @@
     }
   }
   &__Profile {
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+    li {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .profile_img {
+      background: black;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+    }
   }
 }
