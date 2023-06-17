@@ -6,11 +6,20 @@ import Form from '../../components/Form/Form'
 import {Button} from '../../ui-kit'
 import {errorChecks} from '../../helpers/errors'
 import './Login.scss'
-import {Context} from '../../index'
 import data from "../../TestData/user.json"
+import {useDispatch, useSelector} from "react-redux";
 
 const Login = () => {
-    const {user} = useContext(Context)
+    const dispatch = useDispatch();
+	const user = useSelector(state => state.user)
+
+	const trueAuth = (user) => {
+		dispatch({type:"AUTH_TRUE", payload: user})
+	}
+	const userRole = (user) => {
+		dispatch({type:"USER_ROLE", payload: user})
+	}
+
 
     const loginInitialVals = {
         email: "",
@@ -18,10 +27,10 @@ const Login = () => {
     }
 
     function checkData (e, loginData) {
-        console.log(loginData.password === e.target.password.value)
         if((loginData.email === e.target.email.value) && (loginData.password === e.target.password.value)) {
-            user.isAuth = true; 
-            user.userInfo = loginData.role
+            trueAuth(user)
+			userRole(user)
+			console.log(user)
         }
     }
 

@@ -2,17 +2,20 @@ import React, { createContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import "./index.css"
-import { user } from './store/user';
+import {Provider} from "react-redux";
+import {store} from "./store";
 
-export const Context = createContext(null)
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
 root.render(
   <React.StrictMode>
-    <Context.Provider value={{
-      user: {...user}
-    }}>
+   	<Provider store = {store}>
       <App />
-    </Context.Provider>
+	</Provider>
   </React.StrictMode>
 );

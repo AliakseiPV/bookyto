@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import {Context} from '../../index'
 import "./NavBar.scss"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -10,7 +9,6 @@ import {Link, useNavigate} from 'react-router-dom'
 import DropMenu from '../DropMenu';
 
 function NavBar() {
-    const {user} = useContext(Context)
     const navigate = useNavigate();
 
     const [active, setActive] = useState(false)
@@ -38,7 +36,7 @@ function NavBar() {
                             About
                         </Link>
                     </li>
-                    { user.isAuth ? 
+                    { true ?
                         <li>
                             <Link to={BASKET_ROUTE}
                                 onClick={() => navigate(BASKET_ROUTE)}
@@ -55,7 +53,7 @@ function NavBar() {
             </div>
            <div className="Nav__Bar__Profile">
                 <ul>
-                    { user.isAuth ?
+                    { true ?
                         <li>
                             <Link to={LOGIN_ROUTE} 
                                     onClick={() => navigate(LOGIN_ROUTE)}
@@ -77,7 +75,6 @@ function NavBar() {
                             <MenuRoundedIcon
                                 onClick={() => setActive(!active)}
                             />
-                            {console.log(user)}
                             {/* { user.userInfo} */}
                             <DropMenu active={active}/>
                         </div>
