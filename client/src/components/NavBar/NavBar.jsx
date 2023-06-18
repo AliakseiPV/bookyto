@@ -8,17 +8,25 @@ import {LOGIN_ROUTE, DASHBOARD_ROUTE, STORE_ROUTE, BASKET_ROUTE, SETTINGS_ROUTE}
 import {Link, useNavigate} from 'react-router-dom'
 import DropMenu from '../DropMenu/DropMenu';
 import {useDispatch, useSelector} from "react-redux";
+import { dropDownBuyer, dropDownSeller } from '../../helpers/dropDownNav';
 
 function NavBar() {
-	const user = useSelector(state => state.user)
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
+	const user = useSelector(state => state.user)  
 	const dispatch = useDispatch()
 
 	const falseAuth = (user) => {
 		dispatch({type:"AUTH_FALSE", payload: user})
 	}
+	const clearUserInfo = (user) => {
+		dispatch({type: "CLEAR_USERINFO", payload: user})
+	}
 
+	const logout = (user) => {
+		falseAuth(user)
+		clearUserInfo(user)
+	}
 
     return (
         <div className="Nav__Bar">
@@ -49,7 +57,7 @@ function NavBar() {
 							</li>
 							<li
 								className='lock__icon'
-								onClick={() => falseAuth(user)}
+								onClick={() => logout(user)}
 							>
 								<LockOpenOutlinedIcon className="Icon"/>
 							</li>
@@ -59,9 +67,17 @@ function NavBar() {
 						<img src="" alt=""/>
 					</li>
                     <li className='Drop__Icon__Menu'>
-						<div className='arrow__top'></div>
 						<MenuRoundedIcon className='Icon'/>
-						<DropMenu object={[{name:'settings', route:SETTINGS_ROUTE}]}/>
+						{user.userInfo === 'Seller' ?
+							<DropMenu object={dropDownSeller}/>
+							:
+							<></>
+						}
+						{user.userInfo === 'Buyer' ?
+							<DropMenu object={dropDownBuyer}/>
+							:
+							<></>
+						}
                     </li>
                 </ul>
            	</div>

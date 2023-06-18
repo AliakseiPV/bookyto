@@ -13,6 +13,8 @@ export const userReducer = (state = defaultUser, action) => {
 			return {...state, isAuth: false}
 		case "USER_ROLE":
 			return {...state, userInfo: data.role}
+		case "CLEAR_USERINFO":
+			return{...state, userInfo: ''}	
 		default:
 			return state
 	}

@@ -9,6 +9,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   &__Logo {
     margin-left: 30px;
     text-decoration: none;
@@ -52,17 +53,7 @@
   &:hover {
     .Drop__Menu {
       display: block;
-      transform: translateX(-110px) translateY(95px);
-      height: 150px;
-    }
-    .arrow__top:after {
-      content: " ";
-      position: absolute;
-      top: 23px;
-      border-top: none;
-      border-right: 15px solid transparent;
-      border-left: 15px solid transparent;
-      border-bottom: 13px solid white;
+      transform: translateX(-110px) translateY(160px);
     }
   }
 }
