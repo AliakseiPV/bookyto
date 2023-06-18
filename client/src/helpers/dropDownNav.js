@@ -1,9 +1,9 @@
-import {DASHBOARD_ROUTE, BASKET_ROUTE, SETTINGS_ROUTE} from "../utils/consts";
+import {DASHBOARD_ROUTE, SETTINGS_ROUTE, MYLIBRARY_ROUTE, PROFILE_ROUTE, UPLOAD_ROUTE} from "../utils/consts";
 
-export const dropDownNav = [
+export const dropDownSeller = [
 	{
 		name: 'My library',
-		path: ''
+		path: MYLIBRARY_ROUTE
 	},
 	{
 		name: 'Settings',
@@ -11,14 +11,29 @@ export const dropDownNav = [
 	},
 	{
 		name: 'Profile',
-		path: ''
+		path: PROFILE_ROUTE
 	},
 	{
-		name: '',
-		path: ''
+		name: 'Dashboard',
+		path: DASHBOARD_ROUTE
 	},
 	{
-		name: '',
-		path: ''
+		name: 'Upload',
+		path: UPLOAD_ROUTE
+	}
+]
+
+export const dropDownBuyer = [
+	{
+		name: 'My library',
+		path: MYLIBRARY_ROUTE
+	},
+	{
+		name: 'Settings',
+		path: SETTINGS_ROUTE
+	},
+	{
+		name: 'Profile',
+		path: PROFILE_ROUTE
 	}
 ]

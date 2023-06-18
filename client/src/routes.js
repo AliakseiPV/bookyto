@@ -1,7 +1,4 @@
-import BookPage from './pages/BookPage'
-import {Login} from './pages/Login'
-import {SignUp} from './pages/SignUp'
-import StorePage from './pages/StorePage'
+import {BookPage, Login, SignUp, StorePage, Settings, Basket, Dashboard, MyLibrary, Profile, Upload} from './pages/index'
 import {
 	REGISTRATION_ROUTE,
 	LOGIN_ROUTE,
@@ -14,39 +11,6 @@ import {
 	PROFILE_ROUTE,
 	UPLOAD_ROUTE
 } from './utils/consts'
-import { Basket } from './pages/Basket'
-
-export const BuyerAuthRoutes = [
-    {
-        path: SETTINGS_ROUTE,
-        Component: ''
-    },
-    {
-        path: BASKET_ROUTE,
-        Component: Basket
-    }
-]
-
-export const SellerAuthRoutes = [
-    {
-        path: SETTINGS_ROUTE,
-        Component: ''
-    },
-    {
-        path: DASHBOARD_ROUTE,
-        Component: ''
-    },
-    //upload product maybe change name later 
-    {
-        path: UPLOAD_ROUTE,
-        Component: ''
-    },
-    //list of seller products
-    {
-        path: BOOK_ROUTE,
-        Component: ''
-    }
-]
 
 export const PublicRoutes = [
     {
@@ -66,3 +30,51 @@ export const PublicRoutes = [
         Component: BookPage
     }
 ]
+
+export const BuyerAuthRoutes = [
+    {
+        path: SETTINGS_ROUTE,
+        Component: Settings
+    },
+    {
+        path: BASKET_ROUTE,
+        Component: Basket
+    },
+    {
+        path: PROFILE_ROUTE,
+        Component: Profile
+    },
+    {
+        path: MYLIBRARY_ROUTE,
+        Component: MyLibrary
+    },
+
+]
+
+export const SellerAuthRoutes = [
+    {
+        path: SETTINGS_ROUTE,
+        Component: Settings
+    },
+    {
+        path: BASKET_ROUTE,
+        Component: Basket
+    },
+    {
+        path: PROFILE_ROUTE,
+        Component: Profile
+    },
+    {
+        path: MYLIBRARY_ROUTE,
+        Component: MyLibrary
+    },
+    {
+        path: UPLOAD_ROUTE,
+        Component: Upload
+    },
+    {
+        path: DASHBOARD_ROUTE,
+        Component: Dashboard
+    },
+]
+
