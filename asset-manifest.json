@@ -1,10 +1,24 @@
 {
   "files": {
-    "main.js": "/bookyto/registration/static/js/main.d8122051.js",
-    "index.html": "/bookyto/registration/index.html",
-    "main.d8122051.js.map": "/bookyto/registration/static/js/main.d8122051.js.map"
+    "main.css": "/bookyto/static/css/main.b3001273.css",
+    "main.js": "/bookyto/static/js/main.0236910b.js",
+    "static/media/back.jpg": "/bookyto/static/media/back.95b4af0536c567abf14d.jpg",
+    "static/media/raleway-latin-400-normal.woff2": "/bookyto/static/media/raleway-latin-400-normal.0bdecdd83e78d540c297.woff2",
+    "static/media/raleway-latin-400-normal.woff": "/bookyto/static/media/raleway-latin-400-normal.75844a725e6fe5bd2992.woff",
+    "static/media/raleway-latin-ext-400-normal.woff2": "/bookyto/static/media/raleway-latin-ext-400-normal.e2c3693083a044bed680.woff2",
+    "static/media/raleway-latin-ext-400-normal.woff": "/bookyto/static/media/raleway-latin-ext-400-normal.6c8200d3b5488e4fc34d.woff",
+    "static/media/raleway-cyrillic-ext-400-normal.woff2": "/bookyto/static/media/raleway-cyrillic-ext-400-normal.afca160d632851197a24.woff2",
+    "static/media/raleway-cyrillic-400-normal.woff2": "/bookyto/static/media/raleway-cyrillic-400-normal.f7d0cc4bf9cf8da4f023.woff2",
+    "static/media/raleway-cyrillic-ext-400-normal.woff": "/bookyto/static/media/raleway-cyrillic-ext-400-normal.3fe761aa550d5f8c488b.woff",
+    "static/media/raleway-cyrillic-400-normal.woff": "/bookyto/static/media/raleway-cyrillic-400-normal.596f69b001d3381458f0.woff",
+    "static/media/raleway-vietnamese-400-normal.woff2": "/bookyto/static/media/raleway-vietnamese-400-normal.bb6f51e1b67ec8802d57.woff2",
+    "static/media/raleway-vietnamese-400-normal.woff": "/bookyto/static/media/raleway-vietnamese-400-normal.6e3329d005a65d1f9bb5.woff",
+    "index.html": "/bookyto/index.html",
+    "main.b3001273.css.map": "/bookyto/static/css/main.b3001273.css.map",
+    "main.0236910b.js.map": "/bookyto/static/js/main.0236910b.js.map"
   },
   "entrypoints": [
-    "static/js/main.d8122051.js"
+    "static/css/main.b3001273.css",
+    "static/js/main.0236910b.js"
   ]
 }
