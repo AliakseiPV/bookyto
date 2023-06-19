@@ -15,7 +15,6 @@ const DropMenu = ({object}) => {
 						>
 							{item.name}	
 						</Link>
-					
 					</li>
 				)}
 			</ul>

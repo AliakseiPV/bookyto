@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import {LOGIN_ROUTE, DASHBOARD_ROUTE, STORE_ROUTE, BASKET_ROUTE, SETTINGS_ROUTE} from "../../utils/consts";
+import {LOGIN_ROUTE, DASHBOARD_ROUTE, STORE_ROUTE, BASKET_ROUTE, SETTINGS_ROUTE, PROFILE_ROUTE} from "../../utils/consts";
 import {Link, useNavigate} from 'react-router-dom'
 import DropMenu from '../DropMenu/DropMenu';
 import {useDispatch, useSelector} from "react-redux";
@@ -64,7 +64,11 @@ function NavBar() {
 						</>
                     }
 					<li className='profile_img'>
-						<img src="" alt=""/>
+						<Link to={PROFILE_ROUTE}
+							onClick={() => navigate(PROFILE_ROUTE)}
+						>
+							<img src="" alt=""/>
+						</Link>
 					</li>
                     <li className='Drop__Icon__Menu'>
 						<MenuRoundedIcon className='Icon'/>

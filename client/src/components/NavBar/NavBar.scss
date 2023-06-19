@@ -53,7 +53,8 @@
   &:hover {
     .Drop__Menu {
       display: block;
-      transform: translateX(-110px) translateY(160px);
+      right: -33px;
+      top: 36px;
     }
   }
 }
