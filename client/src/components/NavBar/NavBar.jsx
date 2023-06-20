@@ -5,6 +5,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import {LOGIN_ROUTE, DASHBOARD_ROUTE, STORE_ROUTE, BASKET_ROUTE, SETTINGS_ROUTE, PROFILE_ROUTE} from "../../utils/consts";
+import { AUTH_FALSE, CLEAR_USERINFO } from '../../store/types';
 import {Link, useNavigate} from 'react-router-dom'
 import DropMenu from '../DropMenu/DropMenu';
 import {useDispatch, useSelector} from "react-redux";
@@ -17,10 +18,10 @@ function NavBar() {
 	const dispatch = useDispatch()
 
 	const falseAuth = (user) => {
-		dispatch({type:"AUTH_FALSE", payload: user})
+		dispatch({type: AUTH_FALSE, payload: user})
 	}
 	const clearUserInfo = (user) => {
-		dispatch({type: "CLEAR_USERINFO", payload: user})
+		dispatch({type: CLEAR_USERINFO, payload: user})
 	}
 
 	const logout = (user) => {

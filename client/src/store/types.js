@@ -1,0 +1,5 @@
+export const AUTH_TRUE = 'AUTH_TRUE'
+export const AUTH_FALSE = 'AUTH_FALSE'
+export const USER_ROLE = 'USER_ROLE'
+export const USER_NAME = 'USER_NAME'
+export const CLEAR_USERINFO = 'CLEAR_USERINFO'
