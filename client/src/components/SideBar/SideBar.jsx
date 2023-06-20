@@ -1,15 +1,14 @@
 import React from 'react';
 import './SideBar.scss'
+import List from "../../ui-kit/List/List";
 
 const SideBar = ({array}) => {
     return (
-        <ul className='SideBar'>
-          {array.map((item) => 
-            <li key={item}>
-                {item}
-            </li>
-          )}
-        </ul>
+		<List list={array}
+			  navBool={false}
+			  className={'text_black'}
+			  onClickHandler={() => {}}
+		/>
     );
 };
 
