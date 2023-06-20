@@ -9,35 +9,52 @@
   position: fixed;
   top: 0;
   width: 100%;
-  &__Container {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  &__Logo {
+    margin-left: 30px;
+    text-decoration: none;
+    color: $desert-storm;
+    font-size: 32px;
+  }
+  &__Icon__Wrapper {
+    transform: translateY(2px);
+  }
+  &__Nav {
+    margin-right: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 70%;
     ul {
       display: flex;
-      list-style: none;
-      gap: 2em;
+      justify-content: center;
+      gap: 10px;
     }
     li {
+      cursor: pointer;
       display: flex;
       align-items: center;
     }
-    h1 {
-      margin-left: 30px;
-    }
-  }
-  &__Link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
     .Icon {
-      color: $swamp;
-      margin-left: 5px;
+      width: 26px;
+      height: 26px;
+      color: $desert-storm;
+    }
+    .profile_img {
+      background: black;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
     }
   }
-  &__Profile {
+}
+
+.Drop__Icon__Menu{
+  display: inline-block;
+  position: relative;
+  &:hover {
+    .Drop__Menu {
+      display: block;
+      right: -33px;
+      top: 36px;
+    }
   }
 }

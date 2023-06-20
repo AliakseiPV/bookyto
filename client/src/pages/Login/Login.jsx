@@ -1,16 +1,26 @@
 import React, { useContext } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import FormItem from '../../components/FormItem/FormItem'
-import {REGISTRATION_ROUTE} from '../../utils/consts'
+import {REGISTRATION_ROUTE, STORE_ROUTE} from '../../utils/consts'
 import Form from '../../components/Form/Form'
 import {Button} from '../../ui-kit'
 import {errorChecks} from '../../helpers/errors'
 import './Login.scss'
-import {Context} from '../../index'
 import data from "../../TestData/user.json"
+import {useDispatch, useSelector} from "react-redux";
 
 const Login = () => {
-    const {user} = useContext(Context)
+    const dispatch = useDispatch();
+	const user = useSelector(state => state.user)
+	const navigate = useNavigate();
+
+	const trueAuth = (user) => {
+		dispatch({type:"AUTH_TRUE", payload: user})
+	}
+	const userRole = (user) => {
+		dispatch({type:"USER_ROLE", payload: user})
+	}
+
 
     const loginInitialVals = {
         email: "",
@@ -18,17 +28,17 @@ const Login = () => {
     }
 
     function checkData (e, loginData) {
-        console.log(loginData.password === e.target.password.value)
         if((loginData.email === e.target.email.value) && (loginData.password === e.target.password.value)) {
-            user.isAuth = true; 
-            user.userInfo = loginData.role
+            trueAuth(user)
+			userRole(user)
+			console.log(user)
         }
     }
 
     function handleSubmit (e) {
         e.preventDefault(); 
         checkData(e, data)
-        console.log(user)
+       	navigate(STORE_ROUTE)
     }
 
     return (

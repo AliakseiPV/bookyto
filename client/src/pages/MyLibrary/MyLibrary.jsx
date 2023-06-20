@@ -1,11 +1,11 @@
 import React from 'react';
 
-function About(props) {
+const MyLibrary = () => {
     return (
         <div>
-            About
+            MyLibrary
         </div>
     );
-}
+};
 
-export default About;
+export default MyLibrary;
