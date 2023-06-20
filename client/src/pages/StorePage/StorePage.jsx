@@ -3,13 +3,13 @@ import './StorePage.scss'
 import SellerOptions from '../../components/SellerOptions/SellerOptions';
 import { useNavigate } from 'react-router-dom';
 import { UPLOAD_ROUTE, DASHBOARD_ROUTE } from '../../utils/consts';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import SideBar from '../../components/SideBar/SideBar';
+import { genres } from '../../utils/bookgenres';
 
 const StorePage = () => {
     const user = useSelector(state => state.user)
     const navigate = useNavigate();
-
-    const dispatch = useDispatch()
 
     const btn1 = {
         text: 'Upload',
@@ -38,7 +38,6 @@ const StorePage = () => {
                     : 
                     <></>
                 }
-                
                 <div>Trending books</div>
             </div>
             <div>
@@ -46,7 +45,7 @@ const StorePage = () => {
                 <div>
                     <div>Search Bar</div>
                     <div>
-                        SideBar
+                        <SideBar array={genres}/>
                     </div>
                     <div>Store</div>
                 </div>

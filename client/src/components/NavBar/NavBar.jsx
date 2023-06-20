@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import "./NavBar.scss"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import {LOGIN_ROUTE, DASHBOARD_ROUTE, STORE_ROUTE, BASKET_ROUTE, SETTINGS_ROUTE, PROFILE_ROUTE} from "../../utils/consts";
+import {LOGIN_ROUTE, STORE_ROUTE, BASKET_ROUTE, PROFILE_ROUTE} from "../../utils/consts";
 import { AUTH_FALSE, CLEAR_USERINFO } from '../../store/types';
 import {Link, useNavigate} from 'react-router-dom'
 import DropMenu from '../DropMenu/DropMenu';
@@ -73,12 +73,12 @@ function NavBar() {
 					</li>
                     <li className='Drop__Icon__Menu'>
 						<MenuRoundedIcon className='Icon'/>
-						{user.userInfo === 'Seller' ?
+						{user.userInfo.role === 'Seller' ?
 							<DropMenu object={dropDownSeller}/>
 							:
 							<></>
 						}
-						{user.userInfo === 'Buyer' ?
+						{user.userInfo.role === 'Buyer' ?
 							<DropMenu object={dropDownBuyer}/>
 							:
 							<></>
