@@ -1,6 +1,6 @@
 import React from 'react';
 import './SideBar.scss'
-import List from "../../ui-kit/List/List";
+import {List} from '../../ui-kit';
 
 const SideBar = ({array}) => {
     return (

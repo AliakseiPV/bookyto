@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 import "./DropMenu.scss"
-import List from "../../ui-kit/List/List";
+import {List} from "../../ui-kit";
 
 const DropMenu = ({object}) => {
     return (

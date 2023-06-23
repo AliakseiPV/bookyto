@@ -1,10 +1,9 @@
 import React from 'react';
 import './StorePage.scss'
-import SellerOptions from '../../components/SellerOptions/SellerOptions';
+import {SellerOptions, SideBar} from '../../components';
 import { useNavigate } from 'react-router-dom';
 import { UPLOAD_ROUTE, DASHBOARD_ROUTE } from '../../utils/consts';
 import { useSelector } from 'react-redux';
-import SideBar from '../../components/SideBar/SideBar';
 import { genres } from '../../utils/bookgenres';
 
 const StorePage = () => {

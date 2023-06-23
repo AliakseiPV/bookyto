@@ -10,9 +10,11 @@ const List = ({list, className, onClickHandler, icon, iconClassName, navBool}) =
 			{list.map((item) =>
 				<li key={item} onClick={() => {onClickHandler()}}>
 					{navBool ?
-					<Link to={item.path}>
-						{icon ? <icon className={iconClassName}/> : item.name}
-					</Link> : item
+						<Link to={item.path}>
+							{icon ? <icon className={iconClassName}/> : item.name}
+						</Link>
+						:
+						item
 					}
 				</li>
 			)}

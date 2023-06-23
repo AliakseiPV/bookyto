@@ -9,7 +9,7 @@ import { AUTH_FALSE, CLEAR_USERINFO } from '../../store/types';
 import {Link, useNavigate} from 'react-router-dom'
 import DropMenu from '../DropMenu/DropMenu';
 import {useDispatch, useSelector} from "react-redux";
-import { dropDownBuyer, dropDownSeller } from '../../helpers/dropDownNav';
+import { dropDownBuyer, dropDownSeller } from '../../helpers/dropMenuNav';
 
 function NavBar() {
 	const navigate = useNavigate();

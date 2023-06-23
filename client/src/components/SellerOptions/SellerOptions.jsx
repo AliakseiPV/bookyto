@@ -1,9 +1,7 @@
 import React from 'react';
 import {Button} from '../../ui-kit'
 
-
 const SellerOptions = ({text, btn1, btn2, userName}) => {
-
     return (
         <>
             <p>
