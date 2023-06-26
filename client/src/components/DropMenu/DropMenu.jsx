@@ -1,17 +1,14 @@
 import React from 'react';
-import {Link, useNavigate} from 'react-router-dom'
 import "./DropMenu.scss"
-import {List} from "../../ui-kit";
+import {NavList} from "../index";
 
 const DropMenu = ({object}) => {
     return (
 		<div className="Drop__Menu">
 			<div className='arrow__top'></div>
-			<List
+			<NavList
 				list={object}
 				className={'List'}
-				onClickHandler={() => {}}
-				navBool={true}
 			/>
 		</div>
 	);
