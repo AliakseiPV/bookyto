@@ -1,0 +1,7 @@
+.Store {
+  display: flex;
+  flex-direction: column;
+  &__Container {
+    display: flex;
+  }
+}

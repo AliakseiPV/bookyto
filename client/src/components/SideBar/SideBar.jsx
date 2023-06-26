@@ -4,10 +4,12 @@ import {List} from '../../ui-kit';
 
 const SideBar = ({array}) => {
     return (
+		<div className="SideBar">
 		<List list={array}
 			  className={'text_black'}
 			  onClickHandler={() => {}}
 		/>
+		</div>
     );
 };
 

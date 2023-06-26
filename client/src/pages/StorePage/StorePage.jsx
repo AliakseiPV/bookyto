@@ -1,6 +1,6 @@
 import React from 'react';
 import './StorePage.scss'
-import {BookItem, SideBar} from '../../components';
+import {BookItem, BookList, SideBar} from '../../components';
 import { useNavigate } from 'react-router-dom';
 import { UPLOAD_ROUTE, DASHBOARD_ROUTE } from '../../utils/consts';
 import { useSelector } from 'react-redux';
@@ -38,15 +38,15 @@ const StorePage = () => {
                 }
                 <div>Trending books</div>
             </div>
-            <div>
+            <div className='Store'>
                 <h1>Browse Genres</h1>
-                <div>
-                    <div>Search Bar</div>
+                <div className='Store__Container'>
                     <div>
                         <SideBar array={genres}/>
                     </div>
-                    <div>
-						{/*<BookItem/>*/}
+					<div>
+						<div>Search Bar</div>
+						<BookList/>
 					</div>
                 </div>
             </div>
