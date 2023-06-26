@@ -1,0 +1,42 @@
+@import "../../utils/colors.scss";
+.Book {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 50px;
+  width: 450px;
+  height: 500px;
+  &__Wrapper {
+    width: 200px;
+    height: 200px;
+    background-color: #D9D9D9;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  &__Image {
+    position: absolute;
+    top: -15px;
+    box-shadow: 5px 5px 5px rgb(black, 30%);
+  }
+  &__Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__Title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  &__Writer-Name {
+    font-size: 14px;
+    color: #9C9B9B;
+    font-weight: normal;
+  }
+  &__Book-Price {
+    font-size: 16px;
+    color: $jaffa;
+    font-weight: normal;
+  }
+
+}

@@ -1,11 +1,12 @@
 import React from 'react';
 import './StorePage.scss'
-import {SideBar} from '../../components';
+import {BookItem, SideBar} from '../../components';
 import { useNavigate } from 'react-router-dom';
 import { UPLOAD_ROUTE, DASHBOARD_ROUTE } from '../../utils/consts';
 import { useSelector } from 'react-redux';
 import { genres } from '../../utils/bookgenres';
 import {Button} from "../../ui-kit";
+import {Book} from "@mui/icons-material";
 
 const StorePage = () => {
     const user = useSelector(state => state.user)
@@ -44,7 +45,9 @@ const StorePage = () => {
                     <div>
                         <SideBar array={genres}/>
                     </div>
-                    <div>Store</div>
+                    <div>
+						{/*<BookItem/>*/}
+					</div>
                 </div>
             </div>
         </div>
