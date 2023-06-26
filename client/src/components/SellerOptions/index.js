@@ -1,1 +1,1 @@
-export SellerOptions from './SellerOptions'
+export {default as SellerOptions} from './SellerOptions'
