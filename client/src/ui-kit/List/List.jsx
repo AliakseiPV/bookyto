@@ -9,7 +9,6 @@ const List = ({list, className, onClickHandler}) => {
 			{list.map((item) =>
 				<li key={item} onClick={() => {onClickHandler()}}>
 					{item}
-					}
 				</li>
 			)}
 		</ul>
