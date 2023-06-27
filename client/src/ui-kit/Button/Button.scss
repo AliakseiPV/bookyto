@@ -1,45 +1,48 @@
 @import "../../utils/colors.scss";
 .Button {
-  border: none;
-  font-size: medium;
-  color: $desert-storm;
-  cursor: pointer;
-  border-radius: 15px;
-  padding: 15px;
-  &.radius-3 {
-    border-radius: 3px;
-  }
-  &.small{
-    width: 200px;
-    margin: 5px;
-  }
-  &.medium {
-    margin: 5px;
-    width: 250px;
-  }
-  &.large {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    width: 300px;
-  }
-  &.blue {
-    background-color: $atol;
-  }
-  &.orange {
-    background-color: $jaffa;
-  }
-  &.ripple {
-    background-position: center;
-    transition: background 1s;
-    &:hover {
-      background: $elm radial-gradient(circle, transparent 1%, $elm 1%) center/15000%;
+    border: none;
+    font-size: medium;
+    color: $desert-storm;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 15px;
+    &.shadow {
+        box-shadow: 3px 3px 3px rgb(black, 25%);  
     }
-    &:active {
-      background-color: $nepal;
-      background-size: 100%;
-      transition: background 0s;
+    &.radius-5 {
+        border-radius: 5px;
     }
-  }
+    &.small{
+        width: 200px;
+        margin: 5px;
+    }
+    &.medium {
+        margin: 5px;
+        width: 250px;
+    }
+    &.large {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        width: 300px;
+    }
+    &.blue {
+        background-color: $atol;
+    }
+    &.orange {
+        background-color: $jaffa;
+    }
+    &.ripple {
+        background-position: center;
+        transition: background 1s;
+        &:hover {
+        background: $elm radial-gradient(circle, transparent 1%, $elm 1%) center/15000%;
+        }
+        &:active {
+        background-color: $nepal;
+        background-size: 100%;
+        transition: background 0s;
+        }
+    }
 }
 
 

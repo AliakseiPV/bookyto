@@ -5,3 +5,6 @@
     font-family: "Raleway", serif;
     box-sizing: border-box;
 }
+ul {
+    list-style: none;
+}

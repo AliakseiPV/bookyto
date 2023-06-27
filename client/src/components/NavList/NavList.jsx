@@ -5,7 +5,7 @@ const NavList = ({list, className, iconClassName, icon}) => {
 	return (
 		<ul className={className}>
 			{list.map((item)=>
-				<li key={item}>
+				<li key={item.name}>
 					<Link to={item.path}>
 						{icon ? <icon className={iconClassName}/> : item.name}
 					</Link>
