@@ -25,8 +25,8 @@ const FormItem = ({
     },[values])
     
     return (
-        <div className="form__item"> 
-            <div className="form__item__input"> 
+        <div className="form-item"> 
+            <div className="form-item__input"> 
                 <Input
                     valueInput={values[nameInput]}
                     typeInput={typeInput}
@@ -43,7 +43,7 @@ const FormItem = ({
                     className={classNameLabel}
                 />
             </div>
-            <div className="form__item__error">
+            <div className="form-item__error">
                     {(errors[nameInput]?.length && onFocus)
                         ?
                         <Error errors={errors[nameInput]} className={classNameError}/>

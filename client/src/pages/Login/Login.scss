@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("../../static/back.jpg");
@@ -32,17 +32,17 @@
       text-shadow: $foggy-gray 1px 0 10px;
       font-weight: 900;
     }
-    a {
-      text-decoration: none;
-      color: $jaffa;
-      font-weight: bold;
-    }
   }
   &__Link {
     display: flex;
     width: 260px;
     justify-content: space-between;
     padding: 10px;
+    a {
+      text-decoration: none;
+      color: $jaffa;
+      font-weight: bold;
+    }
   }
 }
 

@@ -1,42 +1,42 @@
 @import "../../utils/colors.scss";
 .Input {
-  width: 78%;
-  border: none;
-  outline: none;
-  background: transparent;
-  margin: 10px 0;
-  color:$desert-storm;
-  font-size: 1em;
-  &.bottom__border {
-    border-bottom: solid 2px $desert-storm;
-  }
-  &.radio {
-    -webkit-appearance: none;
-    appearance: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $desert-storm;
-    margin: 0;
-    width: 1.2em;
-    height: 1.2em;
-    border: 0.15em solid $jaffa;
-    border-radius: 50%;
+    width: 310px;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin: 10px 0;
+    color:$desert-storm;
+    font-size: 1em;
+    &.bottom-border {
+        border-bottom: solid 2px $desert-storm;
+    }
+    &.radio {
+        -webkit-appearance: none;
+        appearance: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $desert-storm;
+        margin: 0;
+        width: 1.2em;
+        height: 1.2em;
+        border: 0.15em solid $jaffa;
+        border-radius: 50%;
     &:before {
-      content: "";
-      width: 0.7em;
-      height: 0.7em;
-      border-radius: 50%;
-      transform: scale(0);
-      transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em $elm;
+        content: "";
+        width: 0.7em;
+        height: 0.7em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em $elm;
     }
     &:checked::before {
-      transform: scale(1);
+        transform: scale(1);
     }
     &:focus {
-      outline: max(2px, 0.15em) solid $jaffa;
-      outline-offset: max(2px, 0.15em);
+        outline: max(2px, 0.15em) solid $jaffa;
+        outline-offset: max(2px, 0.15em);
     }
   }
 }

@@ -4,8 +4,8 @@ import {NavList} from "../index";
 
 const DropMenu = ({object}) => {
     return (
-		<div className="Drop__Menu">
-			<div className='arrow__top'></div>
+		<div className="Drop-Menu">
+			<div className='arrow-top'></div>
 			<NavList
 				list={object}
 				className={'List'}

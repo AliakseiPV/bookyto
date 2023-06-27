@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 const AppRouter = () => {
     const user = useSelector(state => state.user)
     return (
-        <Routes> 
+        <Routes>  
             {user.isAuth && user.userInfo.role === 'Buyer' && BuyerAuthRoutes.map(({path, Component}) => 
                 <Route key={path} path={path} element={<Component/>}/>
             )}

@@ -5,21 +5,27 @@
   color: $desert-storm;
   cursor: pointer;
   border-radius: 15px;
-  &.button__medium {
-    padding: 15px;
-    margin: 5px;
-    width: 25%;
+  padding: 15px;
+  &.radius-3 {
+    border-radius: 3px;
   }
-  &.button__large {
-    padding: 13px;
+  &.small{
+    width: 200px;
+    margin: 5px;
+  }
+  &.medium {
+    margin: 5px;
+    width: 250px;
+  }
+  &.large {
     margin-top: 15px;
     margin-bottom: 10px;
-    width: 70%;
+    width: 300px;
   }
-  &.color__blue {
+  &.blue {
     background-color: $atol;
   }
-  &.color__orange {
+  &.orange {
     background-color: $jaffa;
   }
   &.ripple {

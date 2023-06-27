@@ -59,21 +59,21 @@ const Login = () => {
                     labelText='Email'
                     nameInput='email'
                     typeInput='text'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                    classNameError='arrow__left'
+                    classNameInput='bottom-border'
+                    classNameLabel='shift-up'
+                    classNameError='arrow-left'
                 />
                 <FormItem
                     htmlFor='password'
                     labelText='Password'
                     nameInput='password'
                     typeInput='password'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                    classNameError='arrow__left'
+                    classNameInput='bottom-border'
+                    classNameLabel='shift-up'
+                    classNameError='arrow-left'
                 />
                 <Button
-                    className="button__large color__blue ripple"
+                    className="large blue ripple"
                     buttonType='submit'
                     buttonText='Login'
                 />

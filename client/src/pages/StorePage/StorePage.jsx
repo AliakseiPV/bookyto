@@ -23,13 +23,13 @@ const StorePage = () => {
 							  buttonType='button'
 							  buttonText='Upload'
 							  onClickHandler={() => navigate(UPLOAD_ROUTE)}
-							  className={'button__medium color__orange'}
+							  className={'button__small color__orange'}
 						  />
 						<Button
 							buttonType='button'
 							buttonText='See Dashboard'
 							onClickHandler={() => navigate(DASHBOARD_ROUTE)}
-							className={'button__medium color__blue'}
+							className={'button__small color__blue'}
 						/>
 
                     </div>

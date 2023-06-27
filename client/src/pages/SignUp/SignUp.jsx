@@ -15,88 +15,88 @@ const SignUp = () => {
 
     return (
         <div className='SignUp__Wrapper'>
-        <div className='SignUp__Form'>
-            <h1>Sign Up</h1>
-            <Form 
-                onSubmit={handleSubmit}
-                validationParams={errorChecks}
-                initialValues={signUpValues}
-                className={'center'}
-            >
-                <FormItem
-                    htmlFor='firstName'
-                    labelText='First Name'
-                    nameInput='firstName'
-                    typeInput='text'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                />
-                <FormItem
-                    htmlFor='lastName'
-                    labelText='Last Name'
-                    nameInput='lastName'
-                    typeInput='text'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                />
-                <FormItem
-                    htmlFor='email'
-                    labelText='Email'
-                    nameInput='email'
-                    typeInput='text'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                    classNameError='arrow__left'
-                />
-                <FormItem
-                    htmlFor='password'
-                    labelText='Password'
-                    nameInput='password'
-                    typeInput='password'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                    classNameError='arrow__left'
-                />
-                <FormItem
-                    htmlFor='password_confirmation'
-                    labelText='Confirm password'
-                    nameInput='repeatPassword'
-                    typeInput='password'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                    classNameError='arrow__left'
-                />
-                <FormItem
-                    htmlFor='default_radio'
-                    labelText='Buyer'
-                    nameInput='user_role'
-                    typeInput='radio'
-                    classNameInput='radio'
-                    classNameLabel='radio__label'
-                />
-                <FormItem
-                    htmlFor='default_radio'
-                    labelText='Seller'
-                    nameInput='user_role'
-                    typeInput='radio'
-                    classNameInput='radio'
-                    classNameLabel='radio__label'
-                />
-                <Button
-                    className="button__large color__blue ripple"
-                    buttonType='submit'
-                    buttonText='Sign Up'
-                />
-            </Form>
-            <div className='SignUp__Link'>
-                Already have an account?
-                <span>
-                    <Link to={LOGIN_ROUTE}>
-                        Login
-                    </Link>
-                </span>
+            <div className='SignUp__Form'>
+                <h1>Sign Up</h1>
+                    <Form 
+                        onSubmit={handleSubmit}
+                        validationParams={errorChecks}
+                        initialValues={signUpValues}
+                        className={'center'}
+                    >
+                    <FormItem
+                        htmlFor='firstName'
+                        labelText='First Name'
+                        nameInput='firstName'
+                        typeInput='text'
+                        classNameInput='bottom-border'
+                        classNameLabel='shift-up'
+                    />
+                    <FormItem
+                        htmlFor='lastName'
+                        labelText='Last Name'
+                        nameInput='lastName'
+                        typeInput='text'
+                        classNameInput='bottom-border'
+                        classNameLabel='shift-up'
+                    />
+                    <FormItem
+                        htmlFor='email'
+                        labelText='Email'
+                        nameInput='email'
+                        typeInput='text'
+                        classNameInput='bottom-border'
+                        classNameLabel='shift-up'
+                        classNameError='arrow-left'
+                    />
+                    <FormItem
+                        htmlFor='password'
+                        labelText='Password'
+                        nameInput='password'
+                        typeInput='password'
+                        classNameInput='bottom-border'
+                        classNameLabel='shift-up'
+                        classNameError='arrow-left'
+                    />
+                    <FormItem
+                        htmlFor='password_confirmation'
+                        labelText='Confirm password'
+                        nameInput='repeatPassword'
+                        typeInput='password'
+                        classNameInput='bottom-border'
+                        classNameLabel='shift-up'
+                        classNameError='arrow-left'
+                    />
+                    <FormItem
+                        htmlFor='default_radio'
+                        labelText='Buyer'
+                        nameInput='user_role'
+                        typeInput='radio'
+                        classNameInput='radio'
+                        classNameLabel='radio-label'
+                    />
+                    <FormItem
+                        htmlFor='default_radio'
+                        labelText='Seller'
+                        nameInput='user_role'
+                        typeInput='radio'
+                        classNameInput='radio'
+                        classNameLabel='radio-label'
+                    />
+                    <Button
+                        className="large blue ripple"
+                        buttonType='submit'
+                        buttonText='Sign Up'
+                    />
+                </Form>
+                <div className='SignUp__Link'>
+                    Already have an account?
+                    <span>
+                        <Link to={LOGIN_ROUTE}>
+                            Login
+                        </Link>
+                    </span>
+                </div>
             </div>
-        </div>
         </div>
     );
 };
