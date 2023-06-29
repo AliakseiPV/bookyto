@@ -3,20 +3,22 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    ul {
-        
-    }
     li {
+        display: flex;
         padding-left: 2px;
         cursor: pointer;
+        transition: 0.3s;
     }
-    li:hover {
-        color: $jaffa;
-        border-left: 2px solid $jaffa;
+    &.side-border {
+        li:hover {
+            transform: scale(1.1);
+            color: $jaffa;
+            border-left: 1px solid $jaffa;
+        }
     }
-    &.text-black {
+    &.text-medium {
         color: black;
+        font-size: 18px;
+        font-weight: 500;
     }
 }

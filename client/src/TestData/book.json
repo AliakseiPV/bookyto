@@ -3,7 +3,7 @@
   "title": "A Book Title",
   "writer": "Bob Bob",
   "price": "$9.99",
-  "book_cover": "https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
   "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "pages": 140
 },
@@ -12,7 +12,7 @@
     "title": "A Book Title 2",
     "writer": "Bob Bob",
     "price": "$19.99",
-    "book_cover": "https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pages": 140
   },
@@ -21,7 +21,7 @@
     "title": "A Book Title 3",
     "writer": "Bob Bob",
     "price": "$15.99",
-    "book_cover": "https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pages": 140
   },
@@ -30,7 +30,7 @@
     "title": "A Book Title 4",
     "writer": "Bob Bob",
     "price": "$12.99",
-    "book_cover": "https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pages": 140
   },
@@ -39,8 +39,62 @@
     "title": "A Book Title 5",
     "writer": "Bob Bob",
     "price": "$1.99",
-    "book_cover": "https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pages": 140
-  }
+  },
+  {
+    "id": 1,
+    "title": "A Book Title",
+    "writer": "Bob Bob",
+    "price": "$9.99",
+    "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "pages": 140
+  },
+    {
+      "id": 2,
+      "title": "A Book Title 2",
+      "writer": "Bob Bob",
+      "price": "$19.99",
+      "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "pages": 140
+    },
+    {
+      "id": 3,
+      "title": "A Book Title 3",
+      "writer": "Bob Bob",
+      "price": "$15.99",
+      "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "pages": 140
+    },
+    {
+      "id": 4,
+      "title": "A Book Title 4",
+      "writer": "Bob Bob",
+      "price": "$12.99",
+      "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "pages": 140
+    },
+    {
+      "id": 5,
+      "title": "A Book Title 5",
+      "writer": "Bob Bob",
+      "price": "$1.99",
+      "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "pages": 140
+    },
+    {
+      "id": 5,
+      "title": "A Book Title 5",
+      "writer": "Bob Bob",
+      "price": "$1.99",
+      "book_cover": "https://cdn.eksmo.ru/v2/ITD000000000638629/COVER/cover1__w600.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "pages": 140
+    }
 ]

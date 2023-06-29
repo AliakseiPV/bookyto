@@ -1,5 +1,6 @@
 @import "../../utils/colors.scss";
 .Nav-Bar {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,20 +53,42 @@
 
 .Dropdown{
     display: inline-block;
-    position: relative;
-    &:hover {
-        .Drop-Menu {
-        display: block;
-        right: -33px;
-        top: 36px;
-            li:nth-child(4) {
-                background: white;
-                border-radius: 3px;
-            }
-            li:nth-child(5) {
-                background: white;
-                border-radius: 3px;
-            }
+    
+    &__burger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        
+    }
+    .Drop-Menu {
+        right: 26px;
+        top: 50px;
+        li:nth-child(4) {
+            background: white;
+            border-radius: 3px;
+        }
+        li:nth-child(5) {
+            background: white;
+            border-radius: 3px;
         }
     }
+    #burger {
+        position: absolute;
+        left: -999999px;
+        visibility: hidden;
+    }
+    #burger:checked ~ .Drop-Menu {
+        display: none;
+        li:nth-child(4) {
+            background: white;
+            border-radius: 3px;
+        }
+        li:nth-child(5) {
+            background: white;
+            border-radius: 3px;
+        }
+    }
+   
 }
+

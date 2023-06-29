@@ -73,17 +73,20 @@ function NavBar() {
 						</Link>
 					</li>
                     <li className='Dropdown'>
-						<MenuRoundedIcon className='Nav-Bar__Icon'/>
-						{user.userInfo.role === 'Seller' ?
-							<DropMenu object={dropDownSeller}/>
-							:
-							<></>
-						}
-						{user.userInfo.role === 'Buyer' ?
-							<DropMenu object={dropDownBuyer}/>
-							:
-							<></>
-						}
+						<label htmlFor="burger" className='Dropdown__burger'>
+							<MenuRoundedIcon className='Nav-Bar__Icon'/>
+							<input type="checkbox" id='burger'/>
+							{user.userInfo.role === 'Seller' ?
+								<DropMenu object={dropDownSeller}/>
+								:
+								<></>
+							}
+							{user.userInfo.role === 'Buyer' ?
+								<DropMenu object={dropDownBuyer}/>
+								:
+								<></>
+							}
+						</label>
                     </li>
                 </ul>
            	</div>

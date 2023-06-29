@@ -1,8 +1,9 @@
 @import "../../utils/colors.scss";
+
 .Drop-Menu {
     font-weight: 300;
     text-transform: none;
-    display: none;
+    display: block;
     position: absolute;
     width: 165px;
     border-radius: 3px;
