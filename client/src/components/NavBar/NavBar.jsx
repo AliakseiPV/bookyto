@@ -3,14 +3,13 @@ import "./NavBar.scss"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import {LOGIN_ROUTE, STORE_ROUTE, BASKET_ROUTE, PROFILE_ROUTE} from "../../utils/consts";
 import { AUTH_FALSE, CLEAR_USERINFO } from '../../store/types';
 import {Link, useNavigate} from 'react-router-dom'
-import DropMenu from '../DropMenu/DropMenu';
 import {useDispatch, useSelector} from "react-redux";
-import { dropDownBuyer, dropDownSeller } from '../../helpers/dropMenuNav';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
+import { BurgerMenu } from '../BurgerMenu';
+
 
 function NavBar() {
 	const navigate = useNavigate();
@@ -46,7 +45,7 @@ function NavBar() {
                             <Link to={LOGIN_ROUTE} 
                                     onClick={() => navigate(LOGIN_ROUTE)}
                             >
-                                    <LockOutlinedIcon className="Nav-Bar__Icon"/>
+                                    <LockOutlinedIcon sx={{fontSize: "2em"}} className="Nav-Bar__Icon"/>
                             </Link>
                         </li>
                         :
@@ -55,13 +54,13 @@ function NavBar() {
 								<Link to={BASKET_ROUTE}
 									  onClick={() => navigate(BASKET_ROUTE)}
 								>
-									<ShoppingCartIcon className="Nav-Bar__Icon"/>
+									<ShoppingCartIcon sx={{fontSize: "2em"}} className="Nav-Bar__Icon"/>
 								</Link>
 							</li>
 							<li
 								onClick={() => logout(user)}
 							>
-								<LockOpenOutlinedIcon className="Nav-Bar__Icon"/>
+								<LockOpenOutlinedIcon sx={{fontSize: "2em"}} className="Nav-Bar__Icon"/>
 							</li>
 						</>
                     }
@@ -73,20 +72,7 @@ function NavBar() {
 						</Link>
 					</li>
                     <li className='Dropdown'>
-						<label htmlFor="burger" className='Dropdown__burger'>
-							<MenuRoundedIcon className='Nav-Bar__Icon'/>
-							<input type="checkbox" id='burger'/>
-							{user.userInfo.role === 'Seller' ?
-								<DropMenu object={dropDownSeller}/>
-								:
-								<></>
-							}
-							{user.userInfo.role === 'Buyer' ?
-								<DropMenu object={dropDownBuyer}/>
-								:
-								<></>
-							}
-						</label>
+						<BurgerMenu/>
                     </li>
                 </ul>
            	</div>

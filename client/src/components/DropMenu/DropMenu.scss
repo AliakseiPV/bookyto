@@ -3,7 +3,7 @@
 .Drop-Menu {
     font-weight: 300;
     text-transform: none;
-    display: block;
+    display: none;
     position: absolute;
     width: 165px;
     border-radius: 3px;
@@ -31,6 +31,7 @@
         text-decoration: none;
     }
     .arrow-top:after {
+        transform: scale(1.4);
         content: " ";
         position: absolute;
         border-top: none;

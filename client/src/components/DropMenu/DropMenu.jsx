@@ -1,13 +1,15 @@
 import React from 'react';
 import "./DropMenu.scss"
 import {NavList} from "../index";
+import classNames from 'classnames';
 
-const DropMenu = ({object}) => {
+const DropMenu = ({fillData, className}) => {
+
     return (
-		<div className="Drop-Menu scale-in-ver-top">
+		<div className={classNames("Drop-Menu scale-in-ver-top", className)}>
 			<div className='arrow-top'></div>
 			<NavList
-				list={object}
+				list={fillData}
 				className={'List'}
 			/>
 		</div>

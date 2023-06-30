@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import { genres } from '../../utils/bookgenres';
 import {Button, Input} from "../../ui-kit";
 import SearchIcon from '@mui/icons-material/Search';
-import testData from '../../TestData/book.json'
 
 
 const StorePage = () => {
@@ -43,7 +42,6 @@ const StorePage = () => {
                         <></>
                     }  */}
                 </div>
-                
             </div>
             <div className='Store__trending'>
                     <h1>Trending books</h1>

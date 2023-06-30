@@ -11,7 +11,6 @@ function SampleNextArrow({onClick}) {
         />
     );
 }
-  
 function SamplePrevArrow({onClick}) {
     return (
         <div
@@ -44,7 +43,7 @@ export default class AutoPlay extends Component {
         <div style={{width: "1050px"}}>
             <Slider {...settings}>
         {books.map(book => 
-            <div>
+            <div key={book.id}>
                 <img 
                     className="slider-img" 
                     onClick={() => {}} 
