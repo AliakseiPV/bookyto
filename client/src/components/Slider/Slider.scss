@@ -1,0 +1,52 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+@import '../../utils/colors.scss';
+
+.slider-img {
+    margin: 40px 20px;
+    box-shadow: 5px 5px 5px rgb(black, 50%);
+    cursor: pointer;
+}
+.slick-center {
+    transform: scale(1.2);
+}
+.slick-center + div{
+    transform: scale(1.1);
+}
+.slick-track div {
+    transition: 0.7s;
+}
+div:has(+ .slick-center){
+    
+    transform: scale(1.1);
+}
+.left-row {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    border-top: 15px solid transparent;
+    border-right: 15px solid $jaffa;
+    border-left: 15px solid transparent;
+    border-bottom: 13px solid transparent;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+.right-row {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    border-top: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-left: 15px solid $jaffa;
+    border-bottom: 13px solid transparent;
+    transform: scale(1.5);
+    cursor: pointer;
+}    
+.slick-dots li button:before {
+    font-size: 12px;
+    line-height: 20px;
+    color: $jaffa;
+}
+.slick-dots li.slick-active button:before {
+    color: $jaffa;
+}

@@ -1,50 +1,44 @@
 @import "../../utils/colors.scss";
-.Drop__Menu {
-  font-weight: 300;
-  text-transform: none;
-  display: none;
-  position: absolute;
-  width: 165px;
-  border-radius: 3px;
-  background-color: $southpeak;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  ul {
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
-  }
-  li {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
-  }
-  li:hover {
-    background-color: rgba($wellblue, 0.5);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 3px;
-  }
-  li:nth-child(4) {
-    background: white;
-    border-radius: 3px;
-  }
-  li:nth-child(5) {
-    background: white;
-    border-radius: 3px;
-  }
-  a {
-    color: $swamp;
-    padding: 5px 10px;
-    text-decoration: none;
-  }
-  .arrow__top:after {
-    content: " ";
+
+.Drop-Menu {
+    font-weight: 300;
+    text-transform: none;
+    display: none;
     position: absolute;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-left: 15px solid transparent;
-    border-bottom: 13px solid $southpeak;
-    left: 105px;
-    top: -12px
-  }
+    width: 165px;
+    border-radius: 3px;
+    background-color: $southpeak;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+    }
+    li {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+    }
+    li:hover {
+        background-color: rgba($wellblue, 0.5);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+    }
+    a {
+        color: $swamp;
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+    .arrow-top:after {
+        transform: scale(1.4);
+        content: " ";
+        position: absolute;
+        border-top: none;
+        border-right: 15px solid transparent;
+        border-left: 15px solid transparent;
+        border-bottom: 13px solid $southpeak;
+        left: 105px;
+        top: -12px
+    }
 }

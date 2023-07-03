@@ -13,7 +13,7 @@
     font-size: 12px;
     font-weight: bolder;
     text-align: left;
-    &.arrow__left:after {
+    &.arrow-left:after {
             content: " ";
             position: absolute;
             left: -13px;
@@ -22,8 +22,9 @@
             border-right: 15px solid $atol;
             border-left: none;
             border-bottom: 13px solid transparent;
-        }
+    }
     li {
+      list-style: none;
       padding: 2px;
     }
 }

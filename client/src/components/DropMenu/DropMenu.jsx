@@ -1,23 +1,17 @@
 import React from 'react';
-import {Link, useNavigate} from 'react-router-dom'
 import "./DropMenu.scss"
+import {NavList} from "../index";
+import classNames from 'classnames';
 
-const DropMenu = ({object}) => {
-	const navigate = useNavigate(); 
+const DropMenu = ({fillData, className}) => {
+
     return (
-		<div className="Drop__Menu">
-			<div className='arrow__top'></div>
-			<ul>
-				{object.map((item) =>
-					<li key={item.name}>
-						<Link to={item.path}
-							onClick={() => navigate(item.path)}
-						>
-							{item.name}	
-						</Link>
-					</li>
-				)}
-			</ul>
+		<div className={classNames("Drop-Menu scale-in-ver-top", className)}>
+			<div className='arrow-top'></div>
+			<NavList
+				list={fillData}
+				className={'List'}
+			/>
 		</div>
 	);
 }

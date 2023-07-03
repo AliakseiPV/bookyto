@@ -1,15 +1,15 @@
 .Label {
-  width: 79%;
+  width: 310px;
   pointer-events: none;
   font-size: 1.1em;
-  &.shift__up {
+  &.shift-up {
     position: absolute;
     left: 39px;
     top: 20px;
     padding-left: 5px;
     transition: all 0.3s ease-in;
   }
-  &.radio__label {
+  &.radio-label {
     position: absolute;
     left: 100px;
   }

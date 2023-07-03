@@ -1,26 +1,28 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-import FormItem from '../../components/FormItem/FormItem'
 import {REGISTRATION_ROUTE, STORE_ROUTE} from '../../utils/consts'
-import Form from '../../components/Form/Form'
+import {Form, FormItem} from '../../components'
 import {Button} from '../../ui-kit'
 import {errorChecks} from '../../helpers/errors'
 import './Login.scss'
 import data from "../../TestData/user.json"
 import {useDispatch, useSelector} from "react-redux";
+import {AUTH_TRUE, USER_ROLE, USER_NAME} from '../../store/types'
 
 const Login = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 	const user = useSelector(state => state.user)
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
 	const trueAuth = (user) => {
-		dispatch({type:"AUTH_TRUE", payload: user})
+		dispatch({type: AUTH_TRUE, payload: user})
 	}
 	const userRole = (user) => {
-		dispatch({type:"USER_ROLE", payload: user})
+		dispatch({type: USER_ROLE, payload: user})
 	}
-
+    const userName = (user) => {
+        dispatch({type: USER_NAME, payload: user})
+    }
 
     const loginInitialVals = {
         email: "",
@@ -31,6 +33,7 @@ const Login = () => {
         if((loginData.email === e.target.email.value) && (loginData.password === e.target.password.value)) {
             trueAuth(user)
 			userRole(user)
+            userName(user)
 			console.log(user)
         }
     }
@@ -56,21 +59,21 @@ const Login = () => {
                     labelText='Email'
                     nameInput='email'
                     typeInput='text'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                    classNameError='arrow__left'
+                    classNameInput='bottom-border'
+                    classNameLabel='shift-up'
+                    classNameError='arrow-left'
                 />
                 <FormItem
                     htmlFor='password'
                     labelText='Password'
                     nameInput='password'
                     typeInput='password'
-                    classNameInput='bottom__border'
-                    classNameLabel='shift__up'
-                    classNameError='arrow__left'
+                    classNameInput='bottom-border'
+                    classNameLabel='shift-up'
+                    classNameError='arrow-left'
                 />
                 <Button
-                    className="button__large color__blue ripple"
+                    className="large blue ripple"
                     buttonType='submit'
                     buttonText='Login'
                 />

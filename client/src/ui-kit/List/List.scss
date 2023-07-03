@@ -1,0 +1,24 @@
+@import "../../utils/colors.scss";
+.List {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+        display: flex;
+        padding-left: 2px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    &.side-border {
+        li:hover {
+            transform: scale(1.1);
+            color: $jaffa;
+            border-left: 1px solid $jaffa;
+        }
+    }
+    &.text-medium {
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
