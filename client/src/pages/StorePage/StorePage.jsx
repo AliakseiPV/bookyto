@@ -13,14 +13,12 @@ const StorePage = () => {
     const user = useSelector(state => state.user)
     const navigate = useNavigate();
 
-
-
     return (
         <div className='Store'>
             <div className="Store__top center">
                 <div className="Store__seller-container">
-                    {/* {(user.isAuth && user.userInfo.role === 'Seller') 
-                        ? */}
+                    {(user.isAuth && user.userInfo.role === 'Seller') 
+                        ?
                         <div className='Store__seller'>
                             <p>Do you wish to</p>
                             <div className="Store__seller-options">
@@ -38,16 +36,15 @@ const StorePage = () => {
                                 />
                             </div>
                         </div>
-                         {/* :  
+                          :  
                         <></>
-                    }  */}
+                    }  
                 </div>
             </div>
             <div className='Store__trending'>
                     <h1>Trending books</h1>
                     <div className="Store__trending-books">
                         <div className="Store__left-row"></div>
-                            {/* <img src={testData.map(data => data.book_cover)} alt="" /> */}
                             <Slider/>
                         <div className="Store__right-row"></div>
                     </div>
@@ -67,7 +64,6 @@ const StorePage = () => {
                 </div>
             </div>
         </div>
-        
     );
 };
 
