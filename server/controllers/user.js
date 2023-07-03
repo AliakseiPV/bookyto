@@ -1,5 +1,3 @@
-const user = require('../models/models');
-
 // async (req, res) => {
 //   try {
 //       const {email, password, role} = req.body

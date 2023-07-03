@@ -6,7 +6,7 @@ const bookRouter = require('./bookRouter.js')
 
 router.use('/user', userRouter)
 router.use('/genre', genreRouter)
-// router.use('/book', bookRouter)
+router.use('/book', bookRouter)
 
 
 module.exports = router;
