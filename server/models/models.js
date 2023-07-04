@@ -32,10 +32,6 @@ const Genre = sequelize.define('genre', {
   genre: {type: DataTypes.STRING, allowNull: false}
 })
 
-const BookGenres = sequelize.define('book_genres', {
-  id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-})
-
 const Rating = sequelize.define('rating', {
   id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   rate: {type: DataTypes.INTEGER, allowNull: false}
@@ -52,7 +48,21 @@ const Profile = sequelize.define('profile', {
 
 const Seller = sequelize.define('seller', {
   id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+  author_name : {type: DataTypes.STRING},
   total_earned: {type: DataTypes.INTEGER, defaultValue: 0}
+})
+
+const SoldBooks = sequelize.define('sold_books', {
+  id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+  sold: {type: DataTypes.INTEGER, allowNull: false}
+})
+
+const BookGenres = sequelize.define('book_genres', {
+  id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+})
+
+const SellerBooks = sequelize.define('book_genres', {
+  id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 })
 
 User.hasOne(Basket)
@@ -69,7 +79,10 @@ Seller.belongsTo(User)
 Basket.hasMany(BasketBook)
 BasketBook.belongsTo(Basket)
 
-Book.belongsToMany(Genre , {through: BookGenres})
+Genre.hasMany(Book)
+Book.belongsTo(Genre)
+
+Book.hasMany(Genre)
 Genre.belongsToMany(Book , {through: BookGenres})
 
 Book.hasMany(Rating)
@@ -77,6 +90,16 @@ Rating.belongsTo(Book)
 
 Seller.hasMany(Book)
 Book.belongsTo(Seller)
+
+Book.hasOne(Seller)
+Seller.belongsToMany(Book, {through: SellerBooks})
+
+Seller.hasMany(SoldBooks)
+SoldBooks.belongsTo(Seller)
+
+Book.hasOne(SoldBooks)
+SoldBooks.belongsTo(Book)
+
 
 module.exports = {
   User,

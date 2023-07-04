@@ -1,9 +1,11 @@
 const Router = require('express')
 const router = new Router()
+const bookController = require('../controllers/bookController')
+const checkRoleMiddleware = require('../middleware/checkRoleMiddleware')
 
-router.post('/',)
-router.get('/',)
-router.get('/:id',)
+router.post('/', checkRoleMiddleware('Seller'), bookController.create)
+router.get('/', bookController.getAll)
+router.get('/:id', bookController.getOne)
 
 module.exports = router;
 
