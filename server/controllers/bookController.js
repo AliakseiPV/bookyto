@@ -1,7 +1,8 @@
 const uuid = require('uuid')
 const path = require('path')
-const {Book, Seller} = require('../models/models')
+const {Book, Author} = require('../models/models')
 const ApiError = require('../error/ApiError')
+const jwt = require('jsonwebtoken')
 
 
 class BookController {
@@ -16,7 +17,12 @@ class BookController {
             const {book_cover} = req.files
             let fileName = uuid.v4() + '.jpg'
             book_cover.mv(path.resolve(__dirname, '..', 'static', fileName))
-            
+
+            const token = req.headers.authorization.split(' ')[1]
+            const decoded = jwt.verify(token, process.env.SECRET_KEY)
+            const userId = decoded.id
+            const author = await Author.findOne({where: {userId}})
+
             const book = await Book.create({
                 title, 
                 price, 
@@ -24,12 +30,14 @@ class BookController {
                 total_pages, 
                 genreId, 
                 book_cover: fileName,
+                authorId: author.id
             })
             return res.json(book)
         } catch(e) {
             next(ApiError.badRequest(e.message))
         }
     }
+
     async getAll(req, res) {
         let {genreId, limit, page} = req.query
         page = page || 1
@@ -44,6 +52,7 @@ class BookController {
         }
         return res.json(books)
     }
+
     async getOne(req,res) {
         const {id} = req.params
         const book = await Book.findOne(
